@@ -34,7 +34,7 @@
         "name": "Sukkubus Level 1-60 besiegen"
       }
     ],
-    "strategy": "Nutze Truhen, Schraubenschlüssel und Baupläne erst um 12 Uhr!!! So holst du direkt auch Punkte für deine Totale Bewaffnung.."
+    "strategy": "Nutze Truhen, Schraubenschlüssel und Baupläne erst um 12 Uhr!!! Zombies auch erst um 08:00 oder 20:00 Apo-Time erledigen! So holst du direkt auch Punkte für deine Totale Bewaffnung. Zombies "
   },
   {
     "day": 2,
@@ -67,7 +67,7 @@
         "name": "Flüchtling rekrutieren"
       }
     ],
-    "strategy": "Große Bauprojekte möglichst erst am Dienstag abschließen."
+    "strategy": "Gebäude beenden und das nutzen von Bau-Beschleuniger erst um 08:00 oder 20:00 Apo-Time!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
   },
   {
     "day": 3,
@@ -92,7 +92,7 @@
         "name": "orangenen Intercity Handel durchführen"
       }
     ],
-    "strategy": "Seltene Heldenressourcen für Mittwoch zurückhalten."
+    "strategy": "Forschung beenden und das nutzen von Forschungs-Beschleuniger erst um 08:00 oder 20:00 Apo-Time!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
   },
   {
     "day": 4,
@@ -137,7 +137,7 @@
         "name": "Durchbruchkristall verwenden"
       }
     ],
-    "strategy": "Einfachster Tag um Punkte zu erzielen! Kein Tipp notwendig."
+    "strategy": "Heute sind nur fortgeschrittene Rekrutierungen beim Allianz Duell und der Totalen Bewaffnung. Heute musst du NICHT unbedingt drauf achten. Falls du es trotzdem machen willst - Rekrutierungen erst um 08:00 oder 20:00 Apo-Time."
   },
   {
     "day": 5,
@@ -166,7 +166,7 @@
         "name": "Trainiere und gewinne einen Soldaten auf Level 1-10"
       }
     ],
-    "strategy": "Trainingswarteschlangen frühzeitig vorbereiten."
+    "strategy": "Heute wie folgt Punkte machen: 04:00 Bau-Beschleuniger benutzen und Gebäude Kampfkraft erhöhen. | 08:00 Apo-Time Soldaten trainieren. | 12:00 Apo-Time Forschungsbeschleuniger und Forschung erhöhen. | 20:00 Apo-Time Nochmal Soldaten trainieren. | So machst du jedes mal für Allianz Duell und Totale Bewaffnung Punkte."
   },
   {
     "day": 6,
@@ -187,6 +187,6 @@
         "name": "orangenen Intercity Handel durchführen"
       }
     ],
-    "strategy": "Nach dem Allianzkrieg direkt wieder Ressourcen für Montag sammeln."
+    "strategy": "Heute kannst du Totale Bewaffnung und Allianz Duell nicht kombinieren. Einfach normal deine 3 Kisten über den Tag erledigen."
   }
 ]
