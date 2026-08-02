@@ -1,0 +1,42 @@
+[
+  {
+    "id": "allianz-duell",
+    "title": "Alliance Duel",
+    "background": "/assets/images/events/alliancebg.webp",
+    "description": "PvP event against the opposing alliance.",
+    "icon": "/assets/images/events/alliance.webp",
+    "start": "2026-08-03T04:00:00",
+    "end": "2026-08-09T04:00:00",
+    "repeatDays": 7
+  },
+  {
+    "id": "server-war",
+    "title": "Server War",
+    "background": "/assets/images/events/serverwarbg.webp",
+    "description": "PvP event against the opposing server.",
+    "icon": "/assets/images/events/alliance.webp",
+    "start": "2026-08-03T04:00:00",
+    "end": "2026-08-09T04:00:00",
+    "repeatDays": 14
+  },
+  {
+    "id": "zombie-tyrann",
+    "title": "Zombie Tyrant",
+    "background": "/assets/images/events/zombietyrannbg.webp",
+    "description": "PvE event against the Zombie Tyrant.",
+    "icon": "/assets/images/events/alliance.webp",
+    "start": "2026-08-04T14:00:00",
+    "end": "2026-08-04T14:25:00",
+    "repeatDays": 3
+  },
+  {
+    "id": "canyon-clash",
+    "title": "Canyon Clash",
+    "background": "/assets/images/events/canyonclashbg.webp",
+    "description": "PvP event against an opposing alliance.",
+    "icon": "/assets/images/events/alliance.webp",
+    "start": "2026-08-07T13:00:00",
+    "end": "2026-08-07T13:40:00",
+    "repeatDays": 3
+  }
+]

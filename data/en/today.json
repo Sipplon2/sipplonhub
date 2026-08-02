@@ -1,0 +1,86 @@
+[
+  {
+    "day": 1,
+    "dayName": "Monday",
+    "title": "Vehicle Modification",
+    "subtitle": "Upgrade vehicles and components today.",
+    "actions": [
+      "Use Golden Wrenches",
+      "Use Modification Blueprints",
+      "Open Component Boxes"
+    ],
+    "tip": "Save your speedups for the matching Alliance Duel day."
+  },
+  {
+    "day": 2,
+    "dayName": "Tuesday",
+    "title": "Shelter Construction",
+    "subtitle": "Focus on buildings and base development today.",
+    "actions": [
+      "Upgrade Buildings",
+      "Use Construction Speedups",
+      "Gather Resources"
+    ],
+    "tip": "Complete major construction projects today whenever possible."
+  },
+  {
+    "day": 3,
+    "dayName": "Wednesday",
+    "title": "Hero Development",
+    "subtitle": "Efficiently upgrade heroes, fragments, and experience.",
+    "actions": [
+      "Upgrade Heroes",
+      "Use Hero Fragments",
+      "Use Hero EXP"
+    ],
+    "tip": "Don't waste rare hero resources outside the correct event day."
+  },
+  {
+    "day": 4,
+    "dayName": "Thursday",
+    "title": "Weapon Modification",
+    "subtitle": "Upgrade equipment and weapons strategically.",
+    "actions": [
+      "Upgrade Weapons",
+      "Use Equipment Parts",
+      "Use Modification Materials"
+    ],
+    "tip": "Check which upgrades provide the highest point gain first."
+  },
+  {
+    "day": 5,
+    "dayName": "Friday",
+    "title": "Troop Training",
+    "subtitle": "Train troops and use training resources.",
+    "actions": [
+      "Train Units",
+      "Use Training Speedups",
+      "Heal Wounded Units"
+    ],
+    "tip": "Prepare your training queues in advance."
+  },
+  {
+    "day": 6,
+    "dayName": "Saturday",
+    "title": "Server War | Alliance War",
+    "subtitle": "Focus on PvP and Alliance activities.",
+    "actions": [
+      "Complete PvP Activities",
+      "Complete Orange Missions",
+      "Use Intercity Trade"
+    ],
+    "tip": "After Alliance War, start collecting resources for Monday again."
+  },
+  {
+    "day": 7,
+    "dayName": "Sunday",
+    "title": "Preparation",
+    "subtitle": "Gather resources and prepare for the upcoming week.",
+    "actions": [
+      "Restock Resources",
+      "Complete Daily Tasks",
+      "Prepare Materials for Monday"
+    ],
+    "tip": "Avoid using valuable event resources on Sunday whenever possible."
+  }
+]

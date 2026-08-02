@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Sipplon's Last Z Hub – Saison-Aufgaben, Allianz-Duell und Events."
+  >
+
+  <title>ISS | Last Z Hub</title>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <header class="hero-header">
+    <div class="hero-header-overlay"></div>
+
+    <div class="hero-header-content">
+      <a
+        href="#dashboard"
+        class="hero-brand"
+        aria-label="Zur Startseite"
+      >
+        <img
+          src="assets/logo/logo.png"
+          alt="Sipplon's Last Z Hub Logo"
+          class="hero-brand-logo"
+        >
+
+        <div class="hero-brand-text">
+          <strong>ISS | Last Z Hub</strong>
+          <span>Guides, Tools & Weekly Planning</span>
+        </div>
+      </a>
+
+      <div class="hero-actions">
+
+<a
+  href="https://last-z.com/#/de/home"
+    class="header-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Last-Z_Homepage"
+>
+  <img
+    src="assets/images/icons/homepage.webp"
+    alt="Guides"
+  >
+</a>
+
+  <div class="language-switcher">
+
+    <button
+      type="button"
+      class="language-button active"
+      data-language="de"
+      aria-label="Deutsch"
+    >
+      <img
+        src="assets/icons/de.svg"
+        alt="Deutsch"
+      >
+    </button>
+
+    <button
+      type="button"
+      class="language-button"
+      data-language="en"
+      aria-label="English"
+    >
+      <img
+        src="assets/icons/us.svg"
+        alt="English"
+      >
+    </button>
+
+  </div>
+
+  <a
+    href="https://discord.gg/ZMSrPb8WuH"
+    class="discord-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Discord"
+  >
+    <img
+      src="assets/icons/discord.svg"
+      alt="Discord"
+    >
+  </a>
+
+</div>
+
+    </div>
+  </header>
+
+  <main
+    id="dashboard"
+    class="page-shell"
+  >
+    <section
+      class="primary-dashboard"
+      aria-label="Hauptbereiche"
+    >
+      <article
+        class="dashboard-panel dashboard-panel-alliance"
+      >
+        <header class="panel-header">
+          <div class="panel-header-icon alliance-header-icon">
+          <img
+                src="assets/images/icons/alliance.webp"
+                alt="Alliance Duel">
+          </div>
+
+          <h2 id="alliance-title"> Allianz-Duell </h2>
+
+            <p id="alliance-subtitle">
+              Wochenplan und Strategie
+            </p>
+          </div>
+        </header>
+
+        <div
+          id="alliance-tabs"
+          class="day-tabs alliance-day-tabs"
+          aria-label="Allianz-Duell nach Wochentag"
+        ></div>
+
+        <div
+          id="alliance-content"
+          class="panel-content"
+        >
+          <p class="panel-eyebrow">
+            Wird geladen …
+          </p>
+
+          <h3>
+            Allianz-Duell wird geladen …
+          </h3>
+        </div>
+      </article>
+
+      <article
+        class="dashboard-panel dashboard-panel-season"
+      >
+  <header class="panel-header">
+    
+      <div class="panel-header-icon">
+        <img src="assets/images/icons/season.webp" alt="Season Tasks">
+      </div>
+
+      <div> 
+        <h2 id="season-title">Saison-Aufgaben</h2>
+        <p id="season-subtitle">Wöchentliche Aufgaben und Ziele</p>
+      </div>
+
+  </header>
+
+        <div
+          id="season-tabs"
+          class="day-tabs season-day-tabs"
+          aria-label="Saison-Aufgaben nach Wochentag"
+        ></div>
+
+        <div
+          id="season-content"
+          class="panel-content"
+        >
+          <p class="panel-eyebrow">
+            Diese Woche
+          </p>
+
+          <h3>
+            Wird geladen …
+          </h3>
+
+          <p class="panel-subtitle">
+            Saison-Aufgaben werden geladen.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section
+      class="events-panel"
+      aria-labelledby="events-title"
+    >
+      <header class="events-panel-header">
+        <div class="events-panel-heading">
+          <div class="compact-panel-icon">
+            📆
+          </div>
+
+          <div>
+            <p
+              id="events-eyebrow"
+              class="panel-eyebrow"
+            >
+              Termine & Countdowns
+            </p>
+
+            <h2 id="events-title">
+              Events
+            </h2>
+
+            <p id="events-subtitle">
+              Kommende Last-Z-Termine auf einen Blick.
+            </p>
+          </div>
+        </div>
+
+        <span
+          id="events-upcoming-count"
+          class="events-upcoming-count"
+        >
+          Wird geladen …
+        </span>
+      </header>
+
+      <div
+        id="next-event"
+        class="next-event"
+      >
+        <p class="events-loading">
+          Nächstes Event wird geladen …
+        </p>
+      </div>
+
+      <div
+        id="events-list"
+        class="events-list"
+      ></div>
+    </section>
+
+    <section
+      id="content-area"
+      class="content-area"
+      hidden
+    ></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Erstellt von
+      <strong>Sipplon</strong>
+    </p>
+
+    <p>
+      Inoffizieller Community-Hub für Last Z.
+    </p>
+  </footer>
+
+  <script src="js/weeklyPlan.js"></script>
+  <script src="js/allianceDuel.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

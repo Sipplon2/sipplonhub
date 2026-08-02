@@ -1,0 +1,192 @@
+[
+  {
+    "day": 1,
+    "dayName": "Montag",
+    "title": "Modifizierungsfahrzeug-Erhöhung",
+    "image":"monday.webp",
+    "tasks": [
+      {
+        "icon": "bauplan.webp",
+        "name": "Modifizierungs-Bauplan verwenden"
+      },
+      {
+        "icon": "schraubenschlüssel.webp",
+        "name": "Goldene Schraubenschlüssel verwenden"
+      },
+      {
+        "icon": "radar.webp",
+        "name": "Radar Ereignis abschließen"
+      },
+      {
+        "icon": "taktiktruhe.webp",
+        "name": "Taktikerweiterung Truhe öffnen"
+      },
+      {
+        "icon": "außenmodul.webp",
+        "name": "Außenmodul Truhe öffnen"
+      },
+      {
+        "icon": "werwolf.webp",
+        "name": "Werwolf Level 1-60 besiegen"
+      },
+      {
+        "icon": "sukkubus.webp",
+        "name": "Sukkubus Level 1-60 besiegen"
+      }
+    ],
+    "strategy": "Ressourcen gezielt am passenden Duell-Tag einsetzen."
+  },
+  {
+    "day": 2,
+    "dayName": "Dienstag",
+    "title": "Bau des Unterschlupfs",
+    "image":"tuesday.webp",
+    "tasks": [
+      {
+        "icon": "baubeschleuniger.webp",
+        "name": "Bau-Beschleuniger verwenden"
+      },
+      {
+        "icon": "gebäudekampfkraft.webp",
+        "name": "Gebäudekampfkraft erhöhen"
+      },
+      {
+        "icon": "kopfgeldmission.webp",
+        "name": "orangene Kopfgeldmission durchführen"
+      },
+      {
+        "icon": "schmiedestein.webp",
+        "name": "Schmiedestein verbrauchen"
+      },
+      {
+        "icon": "pulsmodul.webp",
+        "name": "Pulsmodul verbrauchen"
+      },
+      {
+        "icon": "flüchtling.webp",
+        "name": "Flüchtling rekrutieren"
+      }
+    ],
+    "strategy": "Große Bauprojekte möglichst erst am Dienstag abschließen."
+  },
+  {
+    "day": 3,
+    "dayName": "Mittwoch",
+    "title": "Forschung der Technologie",
+    "image":"wednesday.webp",
+    "tasks": [
+      {
+        "icon": "forschungsbeschleuniger.webp",
+        "name": "Forschungs-Beschleuniger verwenden"
+      },
+      {
+        "icon": "technologiekampfkraft.webp",
+        "name": "Technologiekampfkraft erhöhen"
+      },
+      {
+        "icon": "polizeiabzeichen.webp",
+        "name": "Polizeiabzeichen verwenden"
+      },
+      {
+        "icon": "goldtruck.webp",
+        "name": "orangenen Intercity Handel durchführen"
+      }
+    ],
+    "strategy": "Seltene Heldenressourcen für Mittwoch zurückhalten."
+  },
+  {
+    "day": 4,
+    "dayName": "Donnerstag",
+    "title": "Entwicklung von Helden",
+    "image":"thursday.webp",
+    "tasks": [
+      {
+        "icon": "heldenfragment.webp",
+        "name": "Heldenfragmente verwenden (gold, lila und blau)"
+      },
+      {
+        "icon": "rüstungsfragment.webp",
+        "name": "exklusives Rüstungsfragment verwerden"
+      },
+      {
+        "icon": "rekrutierung.webp",
+        "name": "fortgeschrittene Rekrutierung durchführen"
+      },
+      {
+        "icon": "energiekerne.webp",
+        "name": "Energiekerne verwenden"
+      },
+      {
+        "icon": "beförderungsmaterial.webp",
+        "name": "orangene Ausrüstung als Beförderungsmaterial verwenden"
+      },
+      {
+        "icon": "verstärkungslegierung.webp",
+        "name": "Verstärkungslegierung verwenden"
+      },
+      {
+        "icon": "fähigkeitenhandbücher.webp",
+        "name": "Fähigkeitenhandbücher verwenden (gold, lila und blau)"
+      },
+      {
+        "icon": "erwachungsabzeichen.webp",
+        "name": "Erwachungsabzeichen verwenden"
+      },
+      {
+        "icon": "durchbruchkristall.webp",
+        "name": "Durchbruchkristall verwenden"
+      }
+    ],
+    "strategy": "Einfachster Tag um Punkte zu erzielen! Kein Tipp notwendig."
+  },
+  {
+    "day": 5,
+    "dayName": "Freitag",
+    "title": "Totale Entwicklung",
+    "image":"friday.webp",
+    "tasks": [
+      {
+        "icon": "beliebebeschleuniger.webp",
+        "name": "Benutze beliebige Beschleuniger"
+      },
+      {
+        "icon": "gebäudekampfkraft.webp",
+        "name": "Gebäudekampfkraft erhöhen"
+      },
+      {
+        "icon": "technologiekampfkraft.webp",
+        "name": "Technologiekampfkraft erhöhen"
+      },
+      {
+        "icon": "radar.webp",
+        "name": "Radar Ereignis abschließen"
+      },
+      {
+        "icon": "soldatentrainieren.webp",
+        "name": "Trainiere und gewinne einen Soldaten auf Level 1-10"
+      }
+    ],
+    "strategy": "Trainingswarteschlangen frühzeitig vorbereiten."
+  },
+  {
+    "day": 6,
+    "dayName": "Samstag",
+    "title": "Vernichtung der Feinde",
+    "image":"saturday.webp",
+    "tasks": [
+      {
+        "icon": "beliebebeschleuniger.webp",
+        "name": "Benutze beliebige Beschleuniger"
+      },
+      {
+        "icon": "kopfgeldmission.webp",
+        "name": "orangene Kopfgeldmission durchführen"
+      },
+      {
+        "icon": "goldtruck.webp",
+        "name": "orangenen Intercity Handel durchführen"
+      }
+    ],
+    "strategy": "Nach dem Allianzkrieg direkt wieder Ressourcen für Montag sammeln."
+  }
+]

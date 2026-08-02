@@ -1,0 +1,192 @@
+[
+  {
+    "day": 1,
+    "dayName": "Monday",
+    "title": "Vehicle Enhancement",
+    "image": "monday.webp",
+    "tasks": [
+      {
+        "icon": "bauplan.webp",
+        "name": "Use Modification Blueprints"
+      },
+      {
+        "icon": "schraubenschlüssel.webp",
+        "name": "Use Golden Wrenches"
+      },
+      {
+        "icon": "radar.webp",
+        "name": "Complete Radar Missions"
+      },
+      {
+        "icon": "taktiktruhe.webp",
+        "name": "Open Tactical Enhancement Chests"
+      },
+      {
+        "icon": "außenmodul.webp",
+        "name": "Open Exterior Module Chests"
+      },
+      {
+        "icon": "werwolf.webp",
+        "name": "Defeat Werewolves (Level 1–60)"
+      },
+      {
+        "icon": "sukkubus.webp",
+        "name": "Defeat Succubi (Level 1–60)"
+      }
+    ],
+    "strategy": "Use your resources on the matching Alliance Duel day."
+  },
+  {
+    "day": 2,
+    "dayName": "Tuesday",
+    "title": "Shelter Construction",
+    "image": "tuesday.webp",
+    "tasks": [
+      {
+        "icon": "baubeschleuniger.webp",
+        "name": "Use Construction Speedups"
+      },
+      {
+        "icon": "gebäudekampfkraft.webp",
+        "name": "Increase Building Power"
+      },
+      {
+        "icon": "kopfgeldmission.webp",
+        "name": "Complete Orange Bounty Missions"
+      },
+      {
+        "icon": "schmiedestein.webp",
+        "name": "Use Smithing Stones"
+      },
+      {
+        "icon": "pulsmodul.webp",
+        "name": "Use Pulse Modules"
+      },
+      {
+        "icon": "flüchtling.webp",
+        "name": "Recruit Survivors"
+      }
+    ],
+    "strategy": "Finish major construction projects on Tuesday whenever possible."
+  },
+  {
+    "day": 3,
+    "dayName": "Wednesday",
+    "title": "Technology Research",
+    "image": "wednesday.webp",
+    "tasks": [
+      {
+        "icon": "forschungsbeschleuniger.webp",
+        "name": "Use Research Speedups"
+      },
+      {
+        "icon": "technologiekampfkraft.webp",
+        "name": "Increase Technology Power"
+      },
+      {
+        "icon": "polizeiabzeichen.webp",
+        "name": "Use Police Badges"
+      },
+      {
+        "icon": "goldtruck.webp",
+        "name": "Complete Orange Intercity Trade"
+      }
+    ],
+    "strategy": "Save valuable resources for Wednesday."
+  },
+  {
+    "day": 4,
+    "dayName": "Thursday",
+    "title": "Hero Development",
+    "image": "thursday.webp",
+    "tasks": [
+      {
+        "icon": "heldenfragment.webp",
+        "name": "Use Hero Fragments (Gold, Purple & Blue)"
+      },
+      {
+        "icon": "rüstungsfragment.webp",
+        "name": "Use Exclusive Armor Fragments"
+      },
+      {
+        "icon": "rekrutierung.webp",
+        "name": "Perform Advanced Recruitment"
+      },
+      {
+        "icon": "energiekerne.webp",
+        "name": "Use Energy Cores"
+      },
+      {
+        "icon": "beförderungsmaterial.webp",
+        "name": "Use Orange Equipment as Promotion Material"
+      },
+      {
+        "icon": "verstärkungslegierung.webp",
+        "name": "Use Reinforcement Alloy"
+      },
+      {
+        "icon": "fähigkeitenhandbücher.webp",
+        "name": "Use Skill Books (Gold, Purple & Blue)"
+      },
+      {
+        "icon": "erwachungsabzeichen.webp",
+        "name": "Use Awakening Badges"
+      },
+      {
+        "icon": "durchbruchkristall.webp",
+        "name": "Use Breakthrough Crystals"
+      }
+    ],
+    "strategy": "The easiest day to score points. No special tip needed."
+  },
+  {
+    "day": 5,
+    "dayName": "Friday",
+    "title": "Total Development",
+    "image": "friday.webp",
+    "tasks": [
+      {
+        "icon": "beliebebeschleuniger.webp",
+        "name": "Use Any Speedups"
+      },
+      {
+        "icon": "gebäudekampfkraft.webp",
+        "name": "Increase Building Power"
+      },
+      {
+        "icon": "technologiekampfkraft.webp",
+        "name": "Increase Technology Power"
+      },
+      {
+        "icon": "radar.webp",
+        "name": "Complete Radar Missions"
+      },
+      {
+        "icon": "soldatentrainieren.webp",
+        "name": "Train Soldiers (Level 1–10)"
+      }
+    ],
+    "strategy": "Prepare your training queues in advance."
+  },
+  {
+    "day": 6,
+    "dayName": "Saturday",
+    "title": "Enemy Elimination",
+    "image": "saturday.webp",
+    "tasks": [
+      {
+        "icon": "beliebebeschleuniger.webp",
+        "name": "Use Any Speedups"
+      },
+      {
+        "icon": "kopfgeldmission.webp",
+        "name": "Complete Orange Bounty Missions"
+      },
+      {
+        "icon": "goldtruck.webp",
+        "name": "Complete Orange Intercity Trade"
+      }
+    ],
+    "strategy": "After Alliance War, start collecting resources for Monday again."
+  }
+]

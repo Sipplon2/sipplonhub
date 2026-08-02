@@ -1,0 +1,41 @@
+:root {
+  --background: #080d0f;
+  --background-soft: #0d1417;
+
+  --surface: #12191d;
+  --surface-light: #182126;
+  --surface-hover: #1d282e;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --text: #f4f5f6;
+  --muted: #aeb6bb;
+
+  --primary: #e9b83f;
+  --primary-soft: rgba(233, 184, 63, 0.13);
+
+  --success: #74d968;
+  --danger: #e95858;
+
+  --alliance: #bc6cff;
+  --alliance-soft: rgba(188, 108, 255, 0.12);
+
+  --page-width: 1500px;
+
+  --radius-small: 10px;
+  --radius-medium: 14px;
+  --radius-large: 18px;
+
+  --shadow:
+    0 22px 60px
+    rgba(0, 0, 0, 0.34);
+
+  --font:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}

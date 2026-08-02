@@ -1,0 +1,64 @@
+.page-shell {
+  width: min(
+    var(--page-width),
+    calc(100% - 36px)
+  );
+
+  margin-inline: auto;
+  padding-block: 20px 40px;
+}
+
+.primary-dashboard {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.secondary-dashboard {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 24px;
+}
+
+.secondary-dashboard-single {
+  display: block;
+}
+
+.secondary-dashboard-single .compact-panel-events {
+  width: 100%;
+  max-width: none;
+}
+
+.calculator-panel {
+  margin-top: 24px;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  width: min(
+    var(--page-width),
+    calc(100% - 36px)
+  );
+
+  margin-inline: auto;
+  padding: 18px 0 30px;
+
+  color: var(--muted);
+  font-size: 0.85rem;
+
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  margin: 0;
+}

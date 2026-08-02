@@ -1,0 +1,133 @@
+[
+  {
+    "day": 1,
+    "dayName": "Montag",
+    "title": "Noch offen",
+    "image": "monday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 200.000",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 50",
+        "reward": "×5"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 1.000",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "dayName": "Dienstag",
+    "title": "Noch offen",
+    "image": "tuesday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 20",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 100",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "dayName": "Mittwoch",
+    "title": "Noch offen",
+    "image": "wednesday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 500.000",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 100",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "dayName": "Donnerstag",
+    "title": "Noch offen",
+    "image": "thursday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 30",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 150",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "dayName": "Freitag",
+    "title": "Noch offen",
+    "image": "friday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 1.000",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 100",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "dayName": "Samstag",
+    "title": "Noch offen",
+    "image": "saturday-season.webp",
+    "tasks": [
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 100.000",
+        "reward": "×10"
+      },
+      {
+        "name": "Keine Aufgabe vorhanden",
+        "progress": "0 / 10",
+        "reward": "×5"
+      }
+    ]
+  },
+  {
+  "day": 7,
+  "dayName": "Sonntag",
+  "title": "Noch offen",
+  "image": "sunday-season.webp",
+  "tasks": [
+    {
+      "name": "Keine Aufgabe vorhanden",
+      "progress": "0 / 10",
+      "reward": "×10"
+    },
+    {
+      "name": "Keine Aufgabe vorhanden",
+      "progress": "0 / 120",
+      "reward": "×5"
+    }
+  ]
+}
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "day": 1,
+    "dayName": "Montag",
+    "title": "Fahrzeug-Modifikation",
+    "subtitle": "Heute Fahrzeuge und Komponenten verbessern.",
+    "actions": [
+      "Goldene Schraubenschlüssel nutzen",
+      "Modifikations-Blueprints einsetzen",
+      "Komponenten-Boxen öffnen"
+    ],
+    "tip": "Beschleuniger für den passenden Allianz-Duell-Tag aufbewahren."
+  },
+  {
+    "day": 2,
+    "dayName": "Dienstag",
+    "title": "Unterkunft-Ausbau",
+    "subtitle": "Gebäude und Basisentwicklung stehen heute im Fokus.",
+    "actions": [
+      "Gebäude verbessern",
+      "Bau-Beschleuniger verwenden",
+      "Ressourcen rechtzeitig sammeln"
+    ],
+    "tip": "Große Bauprojekte möglichst erst heute abschließen."
+  },
+  {
+    "day": 3,
+    "dayName": "Mittwoch",
+    "title": "Helden-Entwicklung",
+    "subtitle": "Helden, Fragmente und Erfahrung effizient einsetzen.",
+    "actions": [
+      "Helden aufwerten",
+      "Fragmente verwenden",
+      "Helden-EP einsetzen"
+    ],
+    "tip": "Seltene Heldenressourcen nicht außerhalb des passenden Tages verschwenden."
+  },
+  {
+    "day": 4,
+    "dayName": "Donnerstag",
+    "title": "Waffen-Modifikation",
+    "subtitle": "Ausrüstung und Waffen gezielt verbessern.",
+    "actions": [
+      "Waffen verbessern",
+      "Ausrüstungsteile verwenden",
+      "Modifikationsmaterial einsetzen"
+    ],
+    "tip": "Vorher prüfen, welche Ausrüstung den größten Punktgewinn bringt."
+  },
+  {
+    "day": 5,
+    "dayName": "Freitag",
+    "title": "Einheiten-Training",
+    "subtitle": "Truppen ausbilden und Trainingsressourcen nutzen.",
+    "actions": [
+      "Einheiten trainieren",
+      "Trainings-Beschleuniger einsetzen",
+      "Verwundete Einheiten heilen"
+    ],
+    "tip": "Trainingswarteschlangen frühzeitig vorbereiten."
+  },
+  {
+    "day": 6,
+    "dayName": "Samstag",
+    "title": "Serverkrieg | Allianzkrieg",
+    "subtitle": "PvP und Allianz-Aktivitäten stehen im Mittelpunkt.",
+    "actions": [
+      "PvP-Aktivitäten erledigen",
+      "Orange Missionen abschließen",
+      "Intercity-Handel nutzen"
+    ],
+    "tip": "Nach dem Allianzkrieg direkt wieder Ressourcen für Montag sammeln."
+  },
+  {
+    "day": 7,
+    "dayName": "Sonntag",
+    "title": "Vorbereitung",
+    "subtitle": "Ressourcen sammeln und die kommende Woche planen.",
+    "actions": [
+      "Ressourcen auffüllen",
+      "Tägliche Aufgaben erledigen",
+      "Materialien für Montag sammeln"
+    ],
+    "tip": "Sonntag möglichst wenig wertvolle Event-Ressourcen verbrauchen."
+  }
+]
