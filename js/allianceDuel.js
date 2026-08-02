@@ -296,7 +296,7 @@ function renderAllianceDuelContent() {
         ? `
           <article class="strategy-card">
             <strong>
-              Strategie-Hinweis
+              TOTALE BEWAFFNUNG
             </strong>
 
             <p>
