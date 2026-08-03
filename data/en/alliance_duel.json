@@ -34,7 +34,7 @@
         "name": "Defeat Succubi (Level 1–60)"
       }
     ],
-    "strategy": "Use your resources on the matching Alliance Duel day."
+    "strategy": "Use Wrenches and Blueprints only at 08:00 or 20:00 Apo Time! Also defeat Zombies only at 08:00 or 20:00 Apo-Time! This way, you'll earn points for your Full Preparedness event at the same time."
   },
   {
     "day": 2,
@@ -67,7 +67,7 @@
         "name": "Recruit Survivors"
       }
     ],
-    "strategy": "Finish major construction projects on Tuesday whenever possible."
+    "strategy": "Complete your building upgrades and use Construction Speedups only at 08:00 or 20:00 Apo Time! This way, you'll also earn points for your Full Preparedness event at the same time."
   },
   {
     "day": 3,
@@ -92,7 +92,7 @@
         "name": "Complete Orange Intercity Trade"
       }
     ],
-    "strategy": "Save valuable resources for Wednesday."
+    "strategy": "Complete your research and use Research Speedups only at 08:00 or 20:00 Apo Time! This way, you'll also earn points for your Full Preparedness event at the same time."
   },
   {
     "day": 4,
@@ -137,7 +137,7 @@
         "name": "Use Breakthrough Crystals"
       }
     ],
-    "strategy": "The easiest day to score points. No special tip needed."
+    "strategy": "Today, only Advanced Recruitment counts for Alliance Duel and Full Preparedness. You don't have to worry about timing today. However, if you still want to do it, use Advanced Recruitment only at 08:00 or 20:00 Apo Time."
   },
   {
     "day": 5,
@@ -166,7 +166,7 @@
         "name": "Train Soldiers (Level 1–10)"
       }
     ],
-    "strategy": "Prepare your training queues in advance."
+    "strategy": "Today's point schedule: 04:00 – Use Construction Speedups and increase your Building Power. | 08:00 Apo Time – Train Troops. | 12:00 Apo Time – Use Research Speedups and increase your Research Power. | 20:00 Apo Time – Train Troops again. | This way, you'll earn points for both Alliance Duel and Full Preparedness every time."
   },
   {
     "day": 6,
@@ -187,6 +187,6 @@
         "name": "Complete Orange Intercity Trade"
       }
     ],
-    "strategy": "After Alliance War, start collecting resources for Monday again."
+    "strategy": "Today, you can't combine Full Preparedness and Alliance Duel. Just complete your usual 3 chests throughout the day."
   }
 ]
