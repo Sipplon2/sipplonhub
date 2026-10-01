@@ -185,6 +185,59 @@ function renderWeeklyPlanContent() {
     ? `/assets/images/season/${entry.image}`
     : "";
 
+  const isPendingSeason =
+    /noch offen|coming soon/i.test(entry.title ?? "") ||
+    (tasks.length > 0 && tasks.every((task) =>
+      /keine aufgabe|no task/i.test(task.name ?? task ?? "")
+    ));
+
+  if (isPendingSeason) {
+    const pendingTitle = currentLanguage === "en"
+      ? "Season starts soon"
+      : "Saison startet bald";
+
+    const pendingCopy = currentLanguage === "en"
+      ? "Season missions will appear here automatically."
+      : "Saison-Missionen erscheinen hier automatisch.";
+
+    const phaseCurrent = currentLanguage === "en" ? "Pre-season" : "Vorsaison";
+    const phaseNext = currentLanguage === "en" ? "Season start" : "Saisonstart";
+    const phaseReady = currentLanguage === "en" ? "Missions" : "Missionen";
+
+    container.innerHTML = `
+      <section class="season-awaiting">
+        <div class="season-awaiting-shade"></div>
+
+        <div class="season-awaiting-content">
+          <div class="season-awaiting-emblem">
+            <img src="assets/images/icons/season.webp" alt="" aria-hidden="true">
+          </div>
+
+          <p class="panel-eyebrow">${escapeWeeklyPlanHtml(entry.dayName ?? "")}</p>
+          <h3>${pendingTitle}</h3>
+          <p>${pendingCopy}</p>
+
+          <div class="season-timeline" aria-label="${pendingTitle}">
+            <div class="season-phase active">
+              <span>01</span>
+              <strong>${phaseCurrent}</strong>
+            </div>
+            <div class="season-phase">
+              <span>02</span>
+              <strong>${phaseNext}</strong>
+            </div>
+            <div class="season-phase">
+              <span>03</span>
+              <strong>${phaseReady}</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    return;
+  }
+
   container.innerHTML = `
     <section
       class="season-feature"

@@ -269,6 +269,7 @@ function createEventListItem(entry) {
     ),
     url('${escapeEventHtml(entry.background ?? "")}');
 "
+    >
       <div class="event-list-icon">
   <img
     src="${escapeEventHtml(entry.icon)}"

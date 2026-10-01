@@ -228,6 +228,10 @@ function renderAllianceDuelContent() {
     ? `/assets/images/alliance/${entry.image}`
     : "";
 
+  const taskLabel = currentLanguage === "en" ? "Missions" : "Aufgaben";
+  const focusLabel = currentLanguage === "en" ? "Daily focus" : "Tagesfokus";
+  const readyLabel = currentLanguage === "en" ? "Ready to plan" : "Bereit zum Planen";
+
   contentContainer.innerHTML = `
     <div
   class="alliance-header"
@@ -267,9 +271,26 @@ function renderAllianceDuelContent() {
   </div>
 </div>
 
+    <div class="mission-summary">
+      <div class="mission-summary-count">
+        <span>${taskLabel}</span>
+        <strong>${tasks.length}</strong>
+      </div>
+
+      <div class="mission-summary-focus">
+        <span>${focusLabel}</span>
+        <strong>${escapeAllianceDuelHtml(entry.title ?? "")}</strong>
+      </div>
+
+      <div class="mission-summary-state">
+        <span class="mission-status-dot"></span>
+        ${readyLabel}
+      </div>
+    </div>
+
     <div class="panel-section">
       <h4>
-        Aufgaben
+        ${taskLabel}
       </h4>
 
       ${

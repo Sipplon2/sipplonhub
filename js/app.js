@@ -43,12 +43,80 @@ async function initializeWebsite() {
     if (typeof initEvents === "function") {
       await initEvents();
     }
+
+    renderWeekOverview();
   } catch (error) {
     console.error(
       "Fehler beim Initialisieren der Webseite:",
       error
     );
   }
+}
+
+function renderWeekOverview() {
+  const container = document.querySelector("#week-overview");
+
+  if (!container) {
+    return;
+  }
+
+  const dayNames = currentLanguage === "en"
+    ? ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    : ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+
+  const shortNames = currentLanguage === "en"
+    ? ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+    : ["MO", "DI", "MI", "DO", "FR", "SA", "SO"];
+
+  const today = new Date();
+  const currentDay = today.getDay() === 0 ? 7 : today.getDay();
+  const selectedDay = Number(selectedWeeklyTaskDay ?? currentDay);
+
+  container.innerHTML = dayNames.map((name, index) => {
+    const day = index + 1;
+    const isToday = day === currentDay;
+    const isSelected = day === selectedDay;
+
+    return `
+      <button
+        type="button"
+        class="week-overview-day${isToday ? " is-today" : ""}${isSelected ? " is-selected" : ""}"
+        data-week-day="${day}"
+        aria-pressed="${isSelected}"
+      >
+        <span>${shortNames[index]}</span>
+        <strong>${name}</strong>
+        <small>${isToday ? (currentLanguage === "en" ? "Today" : "Heute") : `0${day}`}</small>
+      </button>
+    `;
+  }).join("");
+
+  const todayName = document.querySelector("#today-name");
+  const todayDate = document.querySelector("#today-date");
+
+  if (todayName) {
+    todayName.textContent = dayNames[currentDay - 1];
+  }
+
+  if (todayDate) {
+    todayDate.textContent = new Intl.DateTimeFormat(
+      currentLanguage === "en" ? "en-US" : "de-DE",
+      { day: "2-digit", month: "long" }
+    ).format(today);
+  }
+
+  for (const button of container.querySelectorAll("[data-week-day]")) {
+    button.addEventListener("click", () => selectWeekDay(Number(button.dataset.weekDay)));
+  }
+}
+
+function selectWeekDay(day) {
+  const allianceButton = document.querySelector(`[data-alliance-day="${day}"]`);
+  const seasonButton = document.querySelector(`[data-season-day="${day}"]`);
+
+  allianceButton?.click();
+  seasonButton?.click();
+  renderWeekOverview();
 }
 
 function updateStaticTexts() {

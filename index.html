@@ -16,9 +16,11 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/relaunch.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#dashboard">Zum Inhalt springen</a>
   <header class="hero-header">
     <div class="hero-header-overlay"></div>
 
@@ -36,7 +38,7 @@
 
         <div class="hero-brand-text">
           <strong>ISS | Last Z Hub</strong>
-          <span>Guides, Tools & Weekly Planning</span>
+          <span>Community Command Center</span>
         </div>
       </a>
 
@@ -105,6 +107,32 @@
     id="dashboard"
     class="page-shell"
   >
+    <section class="welcome-strip" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="welcome-kicker">ISS COMMAND CENTER</p>
+        <h1 id="welcome-title">Deine Woche.<br><span>Ein Blick.</span></h1>
+        <p>Wähle einen Tag und sieh sofort, was für Allianz-Duell und Saison wichtig ist.</p>
+      </div>
+
+      <div class="today-status" aria-label="Aktueller Tag">
+        <span class="today-status-label">HEUTE</span>
+        <strong id="today-name">–</strong>
+        <small id="today-date">–</small>
+      </div>
+    </section>
+
+    <section class="week-command" aria-labelledby="week-title">
+      <header class="week-command-header">
+        <div>
+          <p class="panel-eyebrow">WOCHENPLAN</p>
+          <h2 id="week-title">Wähle deinen Tag</h2>
+        </div>
+        <p>Steuert Allianz-Duell und Saison-Aufgaben gleichzeitig.</p>
+      </header>
+
+      <div id="week-overview" class="week-overview" role="group" aria-label="Wochentag auswählen"></div>
+    </section>
+
     <section
       class="primary-dashboard"
       aria-label="Hauptbereiche"
@@ -131,6 +159,7 @@
           id="alliance-tabs"
           class="day-tabs alliance-day-tabs"
           aria-label="Allianz-Duell nach Wochentag"
+          hidden
         ></div>
 
         <div
@@ -167,6 +196,7 @@
           id="season-tabs"
           class="day-tabs season-day-tabs"
           aria-label="Saison-Aufgaben nach Wochentag"
+          hidden
         ></div>
 
         <div
@@ -247,10 +277,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>
-      Erstellt von
-      <strong>Sipplon</strong>
-    </p>
+    <p><strong>ISS | Last Z Hub</strong> · Erstellt von Sipplon</p>
 
     <p>
       Inoffizieller Community-Hub für Last Z.
