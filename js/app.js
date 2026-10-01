@@ -11,6 +11,13 @@ const staticTexts = {
     eventsEyebrow: "Termine & Countdowns",
     eventsTitle: "Events",
     eventsSubtitle: "Kommende Last-Z-Termine auf einen Blick.",
+    comingSoon: "Coming Soon",
+    comingSoonText: "Die Saison-Aufgaben erscheinen, sobald die Saison startet.",
+    introEyebrow: "Heute",
+    introSub: "Inoffizieller Community-Hub für Last Z.",
+    navAlliance: "Allianz-Duell",
+    navSeason: "Saison",
+    navEvents: "Events",
   },
 
   en: {
@@ -21,6 +28,13 @@ const staticTexts = {
     eventsEyebrow: "Dates & Countdowns",
     eventsTitle: "Events",
     eventsSubtitle: "Upcoming Last Z events at a glance.",
+    comingSoon: "Coming Soon",
+    comingSoonText: "Season missions will appear as soon as the season starts.",
+    introEyebrow: "Today",
+    introSub: "Unofficial community hub for Last Z.",
+    navAlliance: "Alliance Duel",
+    navSeason: "Season",
+    navEvents: "Events",
   },
 };
 
@@ -36,9 +50,7 @@ async function initializeWebsite() {
       await initAllianceDuel();
     }
 
-    if (typeof initWeeklyPlan === "function") {
-      await initWeeklyPlan();
-    }
+    /* Saison-Aufgaben: Coming Soon – initWeeklyPlan() wieder aktivieren, sobald die Saison startet. */
 
     if (typeof initEvents === "function") {
       await initEvents();
@@ -90,6 +102,21 @@ function updateStaticTexts() {
     "#events-subtitle",
     texts.eventsSubtitle
   );
+
+  setTextContent("#season-soon-title", texts.comingSoon);
+  setTextContent("#season-soon-text", texts.comingSoonText);
+  setTextContent("#intro-eyebrow", texts.introEyebrow);
+  setTextContent("#nav-alliance", texts.navAlliance);
+  setTextContent("#nav-season", texts.navSeason);
+  setTextContent("#nav-events", texts.navEvents);
+
+  const dayName = new Intl.DateTimeFormat(
+    currentLanguage === "en" ? "en-US" : "de-DE",
+    { weekday: "long" }
+  ).format(new Date());
+
+  setTextContent("#intro-day", dayName);
+  setTextContent("#intro-sub", texts.introSub);
 
   document.documentElement.lang =
     currentLanguage;

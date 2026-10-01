@@ -23,6 +23,7 @@
   "id": "zombie-tyrann",
   "title": "Zombie-Tyrann",
   "background": "/assets/images/events/zombietyrannbg.webp",
+    "backgroundCrop": 0.31,
   "description": "PvE-Event gegen den Zombie-Tyrann.",
   "icon": "assets/images/events/alliance.webp",
   "start": "2026-08-07T17:00:00",

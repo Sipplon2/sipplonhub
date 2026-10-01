@@ -5,6 +5,7 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: 76px;
 }
 
 body {
@@ -13,23 +14,16 @@ body {
 
   color: var(--text);
   font-family: var(--font);
+  line-height: 1.5;
 
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(62, 82, 67, 0.12),
-      transparent 36%
-    ),
-    var(--background);
-}
-
-button,
-input {
-  font: inherit;
+  background: var(--bg);
 }
 
 button {
   border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 a {
@@ -42,28 +36,40 @@ img {
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
+h1, h2, h3, h4, p {
   margin-top: 0;
 }
 
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-.sr-only {
-  position: absolute;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
-  width: 1px;
-  height: 1px;
+.eyebrow {
+  margin-bottom: 6px;
 
-  overflow: hidden;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 
-  clip: rect(0, 0, 0, 0);
+/* Seitenhintergrund: fixiertes Bild mit Abdunklung, damit Inhalte lesbar bleiben */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 
-  white-space: nowrap;
+  background:
+    linear-gradient(180deg, rgba(10, 13, 16, 0.25) 0%, rgba(10, 13, 16, 0.7) 50%, rgba(10, 13, 16, 0.88) 100%),
+    url("../assets/images/background.webp") center top / cover no-repeat;
+  pointer-events: none;
 }

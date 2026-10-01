@@ -110,47 +110,36 @@ function renderAllianceDuelTabs() {
     return;
   }
 
-  const shortNames = {
-    1: "MO",
-    2: "DI",
-    3: "MI",
-    4: "DO",
-    5: "FR",
-    6: "SA",
-  };
+  const today = new Date().getDay();
 
   tabsContainer.innerHTML =
     allianceDuelEntries
       .map((entry) => {
-        const day =
-          Number(entry.day);
-
+        const day = Number(entry.day);
         const isActive =
-          day ===
-          Number(selectedAllianceDuelDay);
+          day === Number(selectedAllianceDuelDay);
 
         return `
           <button
             type="button"
-            class="day-tab ${
-              isActive ? "active" : ""
-            }"
+            class="day-tab day-${day} ${isActive ? "active" : ""} ${day === today ? "today" : ""}"
+            style="--tab-image: url('/assets/images/alliance/${escapeAllianceDuelHtml(entry.image ?? "")}')"
             data-alliance-day="${day}"
+            title="${escapeAllianceDuelHtml(entry.dayName ?? "")}"
             aria-pressed="${isActive}"
           >
-            <span>
-              ${shortNames[day] ?? ""}
-            </span>
-
-            <small>
-              ${escapeAllianceDuelHtml(
-                entry.dayName ?? ""
-              )}
-            </small>
+            <span class="day-tab-short">${escapeAllianceDuelHtml((entry.dayName ?? "").slice(0, 2).toUpperCase())}</span>
+            <span class="day-tab-full">${escapeAllianceDuelHtml(entry.dayName ?? "")}</span>
           </button>
         `;
       })
       .join("");
+
+  const activeTab = tabsContainer.querySelector(".day-tab.active");
+  if (activeTab) {
+    tabsContainer.scrollLeft =
+      activeTab.offsetLeft - (tabsContainer.clientWidth - activeTab.offsetWidth) / 2;
+  }
 
   registerAllianceDuelTabEvents();
 }
@@ -228,86 +217,64 @@ function renderAllianceDuelContent() {
     ? `/assets/images/alliance/${entry.image}`
     : "";
 
-  contentContainer.innerHTML = `
-    <div
-  class="alliance-header"
-  style="--header-image:url('${imagePath}')"
->
-  <div class="alliance-header-overlay">
-    <div class="alliance-header-content">
+  const isEnglish = currentLanguage === "en";
 
-      <div class="alliance-day">
-        ${escapeAllianceDuelHtml(
-          (entry.dayName ?? "").toUpperCase()
-        )}
+  contentContainer.innerHTML = `
+    <div class="duel day-${Number(entry.day)}">
+      <div
+        class="duel-hero"
+        style="--day-image: url('${escapeAllianceDuelHtml(imagePath)}')"
+      >
+        <span class="duel-day">
+          ${escapeAllianceDuelHtml(entry.dayName ?? "")}
+        </span>
+
+        <h3>${escapeAllianceDuelHtml(entry.title ?? "")}</h3>
+
+        ${
+          entry.boss
+            ? `
+              <div class="duel-boss">
+                ☠ Boss:
+                <strong>${escapeAllianceDuelHtml(entry.boss)}</strong>
+              </div>
+            `
+            : ""
+        }
       </div>
 
-      <h2>
-        ${escapeAllianceDuelHtml(
-          entry.title ?? ""
-        )}
-      </h2>
+      <div class="duel-main">
+        <div>
+          <h4 class="block-title">${isEnglish ? "Tasks" : "Aufgaben"}</h4>
 
-      ${
-        entry.boss
-          ? `
-            <div class="alliance-boss">
-              ☠ Boss:
-              <strong>
-                ${escapeAllianceDuelHtml(
-                  entry.boss
-                )}
-              </strong>
-            </div>
-          `
-          : ""
-      }
+          ${
+            tasks.length > 0
+              ? `<div class="task-grid">${tasks
+                  .map(createAllianceDuelTask)
+                  .join("")}</div>`
+              : `<p class="empty-note">
+                  ${isEnglish
+                    ? "No tasks listed for this day."
+                    : "Für diesen Tag sind keine Aufgaben eingetragen."}
+                </p>`
+          }
+        </div>
 
+        ${
+          entry.strategy
+            ? `
+              <article class="callout">
+                <span class="callout-mark" aria-hidden="true">💡</span>
+                <div>
+                  <strong>${isEnglish ? "Strategy" : "Totale Bewaffnung"}</strong>
+                  <p>${escapeAllianceDuelHtml(entry.strategy)}</p>
+                </div>
+              </article>
+            `
+            : ""
+        }
+      </div>
     </div>
-  </div>
-</div>
-
-    <div class="panel-section">
-      <h4>
-        Aufgaben
-      </h4>
-
-      ${
-        tasks.length > 0
-          ? `
-            <div class="alliance-task-list">
-              ${tasks
-                .map(
-                  createAllianceDuelTask
-                )
-                .join("")}
-            </div>
-          `
-          : `
-            <p class="panel-subtitle">
-              Für diesen Tag sind keine Aufgaben eingetragen.
-            </p>
-          `
-      }
-    </div>
-
-    ${
-      entry.strategy
-        ? `
-          <article class="strategy-card">
-            <strong>
-              TOTALE BEWAFFNUNG
-            </strong>
-
-            <p>
-              ${escapeAllianceDuelHtml(
-                entry.strategy
-              )}
-            </p>
-          </article>
-        `
-        : ""
-    }
   `;
 }
 
@@ -328,22 +295,18 @@ function createAllianceDuelTask(task) {
       : task;
 
   return `
-  <article class="alliance-task">
-    <div class="alliance-task-icon">
-      <img
-        src="/assets/images/icons/alliance/${escapeAllianceDuelHtml(
-          icon
-        )}"
-        alt=""
-        loading="lazy"
-      >
-    </div>
+    <article class="task">
+      <div class="task-icon">
+        <img
+          src="/assets/images/icons/alliance/${escapeAllianceDuelHtml(icon)}"
+          alt=""
+          loading="lazy"
+        >
+      </div>
 
-    <strong>
-      ${escapeAllianceDuelHtml(name)}
-    </strong>
-  </article>
-`;
+      <span class="task-name">${escapeAllianceDuelHtml(name)}</span>
+    </article>
+  `;
 }
 
 function escapeAllianceDuelHtml(value) {

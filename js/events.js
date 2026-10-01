@@ -121,7 +121,9 @@ function renderEvents() {
 
   if (countElement) {
     countElement.textContent =
-      `${upcomingCount} bevorstehend`;
+      currentLanguage === "en"
+        ? `${upcomingCount} upcoming`
+        : `${upcomingCount} bevorstehend`;
   }
 
   nextEventContainer.innerHTML =
@@ -180,75 +182,77 @@ function createNextEventCard(entry) {
       ? "Calculating …"
       : "Wird berechnet …";
 
+  const isEnglish = currentLanguage === "en";
+  const todayNumber = new Date().getDay();
+
+  const todayName = new Intl.DateTimeFormat(
+    isEnglish ? "en-US" : "de-DE",
+    { weekday: "long" }
+  ).format(new Date());
+
+  const todayDuel =
+    typeof allianceDuelEntries !== "undefined"
+      ? allianceDuelEntries.find(
+          (item) => Number(item.day) === todayNumber
+        )
+      : null;
+
+  const todayTitle =
+    todayDuel?.title ??
+    (isEnglish ? "No duel today" : "Heute kein Duell-Tag");
+
   return `
-    <article
-      class="next-event-card ${status}"
-      style="
-        background-image:
-          linear-gradient(
-            90deg,
-            rgba(15, 18, 22, 0.94) 0%,
-            rgba(15, 18, 22, 0.78) 45%,
-            rgba(15, 18, 22, 0.35) 100%
-          ),
-          url('${escapeEventHtml(
-            entry.background ?? ""
-          )}');
-      "
-    >
-      <div class="next-event-icon">
-        <img
-          src="${escapeEventHtml(
-            entry.icon ?? ""
-          )}"
-          alt="${escapeEventHtml(
-            entry.title ?? ""
-          )}"
-        >
-      </div>
+    <article class="next-event-card ${status}">
+      ${createEventBackground(entry)}
 
-      <div class="next-event-content">
-        <p class="next-event-label">
-          ${eventLabel}
+      <div class="hero-today">
+        <p class="eyebrow">
+          ${isEnglish ? "Today" : "Heute"} · ${escapeEventHtml(todayName)}
         </p>
 
-        <h3>
-          ${escapeEventHtml(
-            entry.title
-          )}
-        </h3>
+        <h1>${escapeEventHtml(todayTitle)}</h1>
 
-        <p>
-          ${escapeEventHtml(
-            entry.description ?? ""
-          )}
-        </p>
-
-        <span class="next-event-date">
-          ${formatEventDate(
-            entry.start
-          )}
-        </span>
+        ${
+          todayDuel
+            ? `<a class="hero-button" href="#alliance">
+                ${isEnglish ? "To today's plan" : "Zum Tagesplan"} →
+              </a>`
+            : ""
+        }
       </div>
 
-      <div class="next-event-countdown">
-        <small>
-          ${countdownLabel}
-        </small>
+      <div class="hero-event">
+        <p class="next-event-label">${eventLabel}</p>
+        <h3>${escapeEventHtml(entry.title)}</h3>
 
-        <strong
-          data-event-countdown
-          data-event-start="${escapeEventHtml(
-            entry.start
-          )}"
-          data-event-end="${escapeEventHtml(
-            entry.end ?? ""
-          )}"
-        >
-          ${loadingText}
-        </strong>
+        <div class="next-event-countdown">
+          <small>${countdownLabel}</small>
+          <strong
+            data-event-countdown
+            data-event-start="${escapeEventHtml(entry.start)}"
+            data-event-end="${escapeEventHtml(entry.end ?? "")}"
+          >
+            ${loadingText}
+          </strong>
+        </div>
+
+        <span class="next-event-date">${formatEventDate(entry.start)}</span>
       </div>
     </article>
+  `;
+}
+
+function createEventBackground(entry) {
+  const crop = Number(entry.backgroundCrop) || 0;
+
+  return `
+    <div
+      class="event-bg"
+      style="
+        background-image: url('${escapeEventHtml(entry.background ?? "")}');
+        --crop: ${crop};
+      "
+    ></div>
   `;
 }
 
@@ -257,63 +261,28 @@ function createEventListItem(entry) {
     getEventStatus(entry);
 
   return `
-    <article
-      class="event-list-item ${status}"
-      style="
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(15, 18, 22, 0.96) 0%,
-      rgba(15, 18, 22, 0.84) 50%,
-      rgba(15, 18, 22, 0.5) 100%
-    ),
-    url('${escapeEventHtml(entry.background ?? "")}');
-"
-      <div class="event-list-icon">
-  <img
-    src="${escapeEventHtml(entry.icon)}"
-    alt="${escapeEventHtml(entry.title)}"
-  >
-</div>
+    <article class="event-list-item ${status}">
+      ${createEventBackground(entry)}
 
-      <div class="event-list-content">
-        <div class="event-list-title">
-          <h3>
-            ${escapeEventHtml(
-              entry.title
-            )}
-          </h3>
-
-          <span class="event-status">
-            ${getEventStatusText(status)}
-          </span>
-        </div>
-
-        <p>
-          ${escapeEventHtml(
-            entry.description ?? ""
-          )}
-        </p>
-
-        <small>
-          ${formatEventDate(
-            entry.start
-          )}
-        </small>
+      <div class="event-list-top">
+        <h3>${escapeEventHtml(entry.title)}</h3>
+        <span class="event-status">${getEventStatusText(status)}</span>
       </div>
 
-      <strong
-        class="event-list-countdown"
-        data-event-countdown
-        data-event-start="${escapeEventHtml(
-          entry.start
-        )}"
-        data-event-end="${escapeEventHtml(
-          entry.end ?? ""
-        )}"
-      >
-        Wird berechnet …
-      </strong>
+      <p>${escapeEventHtml(entry.description ?? "")}</p>
+
+      <div class="event-list-foot">
+        <small>${formatEventDate(entry.start)}</small>
+
+        <strong
+          class="event-list-countdown"
+          data-event-countdown
+          data-event-start="${escapeEventHtml(entry.start)}"
+          data-event-end="${escapeEventHtml(entry.end ?? "")}"
+        >
+          …
+        </strong>
+      </div>
     </article>
   `;
 }

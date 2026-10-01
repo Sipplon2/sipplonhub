@@ -85,50 +85,35 @@ function renderWeeklyPlanTabs() {
     return;
   }
 
-  const shortNames = {
-    1: "MO",
-    2: "DI",
-    3: "MI",
-    4: "DO",
-    5: "FR",
-    6: "SA",
-    7: "SO",
-  };
+  const today = new Date().getDay();
 
   tabs.innerHTML =
     weeklyTaskEntries
       .map((entry) => {
-        const day =
-          Number(entry.day);
-
+        const day = Number(entry.day);
         const isActive =
-          day ===
-          Number(
-            selectedWeeklyTaskDay
-          );
+          day === Number(selectedWeeklyTaskDay);
 
         return `
           <button
             type="button"
-            class="day-tab ${
-              isActive ? "active" : ""
-            }"
+            class="day-tab day-${day} ${isActive ? "active" : ""} ${day === today ? "today" : ""}"
             data-season-day="${day}"
+            title="${escapeWeeklyPlanHtml(entry.dayName ?? "")}"
             aria-pressed="${isActive}"
           >
-            <span>
-              ${shortNames[day] ?? ""}
-            </span>
-
-            <small>
-              ${escapeWeeklyPlanHtml(
-                entry.dayName ?? ""
-              )}
-            </small>
+            <span class="day-tab-short">${escapeWeeklyPlanHtml((entry.dayName ?? "").slice(0, 2).toUpperCase())}</span>
+            <span class="day-tab-full">${escapeWeeklyPlanHtml(entry.dayName ?? "")}</span>
           </button>
         `;
       })
       .join("");
+
+  const activeTab = tabs.querySelector(".day-tab.active");
+  if (activeTab) {
+    tabs.scrollLeft =
+      activeTab.offsetLeft - (tabs.clientWidth - activeTab.offsetWidth) / 2;
+  }
 
   registerWeeklyPlanTabEvents();
 }
@@ -180,53 +165,66 @@ function renderWeeklyPlanContent() {
       ? entry.tasks
       : [];
 
-  const imagePath =
-  entry.image
-    ? `/assets/images/season/${entry.image}`
-    : "";
+  const seasonImage =
+    entry.image
+      ? `url('/assets/images/season/${escapeWeeklyPlanHtml(entry.image)}')`
+      : "none";
+
+  /* Fallback: Tagesbild aus dem Allianz-Duell, falls kein Saison-Bild existiert */
+  const dayImage =
+    typeof allianceDuelEntries !== "undefined"
+      ? allianceDuelEntries.find(
+          (item) => Number(item.day) === Number(entry.day)
+        )?.image
+      : null;
+
+  const dayImageCss =
+    dayImage
+      ? `url('/assets/images/alliance/${escapeWeeklyPlanHtml(dayImage)}')`
+      : "none";
+
+  const isEnglish = currentLanguage === "en";
 
   container.innerHTML = `
-    <section
-      class="season-feature"
-      ${
-        imagePath
-          ? `style="--season-image: url('${escapeWeeklyPlanHtml(
-              imagePath
-            )}')"`
-          : ""
-      }
-    >
-      <div class="season-feature-overlay"></div>
+    <div class="season day-${Number(entry.day)}">
+      <div
+        class="duel-hero"
+        style="--season-image: ${seasonImage}; --day-image: ${dayImageCss}"
+      >
+        <span class="duel-day">
+          ${escapeWeeklyPlanHtml(entry.dayName ?? "")}
+        </span>
 
-      <div class="season-feature-content">
-        <p class="panel-eyebrow">
-          ${escapeWeeklyPlanHtml(
-            entry.dayName ?? ""
-          )}
-        </p>
+        <h3>${escapeWeeklyPlanHtml(entry.title ?? "")}</h3>
+      </div>
 
-        <h3>
-          ${escapeWeeklyPlanHtml(
-            entry.title ?? ""
-          )}
-        </h3>
+      <div class="duel-main">
+        <div>
+          <h4 class="block-title">${isEnglish ? "Missions" : "Aufgaben"}</h4>
 
-        <div class="season-feature-section">
-          <h4>
-            Aufgaben
-          </h4>
-
-          <ul class="season-feature-list">
+          <ul class="quest-list">
             ${tasks
-              .map(
-                (task) => `
-                  <li>
-                    ${escapeWeeklyPlanHtml(
-                      task.name ?? task
-                    )}
+              .map((task) => {
+                const name = task.name ?? task;
+
+                return `
+                  <li class="quest">
+                    <div class="quest-body">
+                      <span class="quest-name">${escapeWeeklyPlanHtml(name)}</span>
+                      ${
+                        task.progress
+                          ? `<span class="quest-progress">${escapeWeeklyPlanHtml(task.progress)}</span>`
+                          : ""
+                      }
+                    </div>
+                    ${
+                      task.reward
+                        ? `<span class="quest-reward">${escapeWeeklyPlanHtml(task.reward)}</span>`
+                        : ""
+                    }
                   </li>
-                `
-              )
+                `;
+              })
               .join("")}
           </ul>
         </div>
@@ -234,22 +232,18 @@ function renderWeeklyPlanContent() {
         ${
           entry.hint
             ? `
-              <article class="season-feature-hint">
-                <strong>
-                  Strategie-Hinweis
-                </strong>
-
-                <p>
-                  ${escapeWeeklyPlanHtml(
-                    entry.hint
-                  )}
-                </p>
+              <article class="callout">
+                <span class="callout-mark" aria-hidden="true">💡</span>
+                <div>
+                  <strong>${isEnglish ? "Strategy tip" : "Strategie-Hinweis"}</strong>
+                  <p>${escapeWeeklyPlanHtml(entry.hint)}</p>
+                </div>
               </article>
             `
             : ""
         }
       </div>
-    </section>
+    </div>
   `;
 }
 
