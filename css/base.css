@@ -69,7 +69,12 @@ body::before {
   z-index: -1;
 
   background:
-    linear-gradient(180deg, rgba(10, 13, 16, 0.25) 0%, rgba(10, 13, 16, 0.7) 50%, rgba(10, 13, 16, 0.88) 100%),
-    url("../assets/images/background.webp") center top / cover no-repeat;
+    linear-gradient(180deg, rgba(10, 13, 16, 0.12) 0%, rgba(10, 13, 16, 0.5) 55%, rgba(10, 13, 16, 0.72) 100%),
+    url("../assets/images/background-hud.webp") center / cover no-repeat;
   pointer-events: none;
+
+  /* Das Bild ist nur 1672 px breit und wird auf großen Bildschirmen hochskaliert.
+     Leichte Unschärfe verdeckt die Treppen-Artefakte, scale() verhindert helle Ränder. */
+  filter: blur(1.6px);
+  transform: scale(1.04);
 }

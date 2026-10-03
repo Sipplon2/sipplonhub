@@ -323,7 +323,13 @@
   grid-auto-columns: minmax(0, 1fr);
   gap: 8px;
   margin-bottom: 16px;
-  padding: 6px 2px 10px;
+  padding: 12px;
+
+  background: rgba(21, 27, 33, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
 }
 
 .day-tab {
@@ -538,11 +544,6 @@
   transition: border-color 0.15s, transform 0.15s;
 }
 
-.task:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-1px);
-}
-
 .task-icon {
   display: grid;
   place-items: center;
@@ -695,11 +696,6 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
   transition: border-color 0.15s, transform 0.15s;
-}
-
-.event-list-item:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-2px);
 }
 
 .event-list-item.running {
@@ -893,10 +889,6 @@
     0 2px 4px rgba(0, 0, 0, 0.35),
     0 14px 28px -6px rgba(0, 0, 0, 0.55),
     0 40px 70px -20px rgba(0, 0, 0, 0.7);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
 }
 
 .duel,
@@ -905,30 +897,6 @@
   background-color: rgba(16, 21, 26, 0.82);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-.next-event-card:hover,
-.duel:hover,
-.season:hover,
-.soon:hover,
-.event-list-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--line-strong);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.1) inset,
-    0 4px 8px rgba(0, 0, 0, 0.4),
-    0 22px 38px -6px rgba(0, 0, 0, 0.6),
-    0 54px 90px -20px rgba(0, 0, 0, 0.75);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .next-event-card:hover,
-  .duel:hover,
-  .season:hover,
-  .soon:hover,
-  .event-list-item:hover {
-    transform: none;
-  }
 }
 
 .next-event-card,
@@ -965,4 +933,972 @@
 .tool-button-lastz:hover {
   border-color: #e0453a;
   box-shadow: 0 0 14px -2px rgba(224, 69, 58, 0.6);
+}
+
+/* ───────── Hero: Eventzeilen ───────── */
+
+.hero-event {
+  align-items: stretch;
+  gap: 14px;
+
+  padding: 16px;
+  text-align: left;
+}
+
+.hero-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-group .next-event-label {
+  margin: 0;
+  color: var(--accent);
+}
+
+.hero-group.running .next-event-label {
+  color: var(--live);
+}
+
+.hero-group.running .next-event-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--live);
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 12px 8px 8px;
+
+  background: rgba(10, 13, 16, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.hero-row.running {
+  border-color: rgba(255, 93, 93, 0.35);
+}
+
+.hero-row-thumb {
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  background-color: var(--surface-2);
+  background-size: cover;
+  border-radius: 9px;
+}
+
+.hero-row-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-row-info strong {
+  overflow: hidden;
+
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-row-info small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.hero-row-countdown {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hero-row.upcoming .hero-row-countdown {
+  color: #e6edf1;
+  font-size: 1.05rem;
+}
+
+/* ───────── Zeitanzeige ───────── */
+
+.time-clock {
+  color: #5be37a;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.time-clock.apo {
+  color: var(--warm);
+}
+
+.time-switch {
+  display: flex;
+  padding: 3px;
+  gap: 2px;
+
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.time-button {
+  padding: 4px 12px;
+
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  background: transparent;
+  border-radius: 999px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.time-button:hover {
+  color: var(--text);
+}
+
+.time-button.active {
+  color: #0a2412;
+  background: #5be37a;
+}
+
+.time-button[data-time-mode="apo"].active {
+  color: #2b1a02;
+  background: var(--warm);
+}
+
+/* ───────── Kriegswoche / Invasion ───────── */
+
+.war-badge {
+  margin-bottom: 14px;
+  padding: 5px 12px;
+
+  color: var(--warm);
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  background: var(--warm-soft);
+  border: 1px solid rgba(255, 181, 71, 0.4);
+  border-radius: 999px;
+}
+
+.war-badge:hover {
+  background: rgba(255, 181, 71, 0.25);
+}
+
+.invasion-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+
+  background: rgba(16, 21, 26, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-l);
+}
+
+.invasion-body .block-title {
+  margin: 0;
+}
+
+.invasion-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+
+.invasion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.invasion-group-name {
+  margin: 0;
+
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.invasion-icon {
+  font-size: 1.4rem;
+}
+
+.invasion-info {
+  padding: 14px 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-m);
+}
+
+.invasion-info-title {
+  margin: 0 0 8px;
+
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.invasion-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.invasion-info li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  color: #b9c3c9;
+  font-size: 0.85rem;
+}
+
+.invasion-info li strong {
+  color: #dbe2e6;
+  font-weight: 600;
+}
+
+.invasion-info .dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translateY(-1px);
+}
+
+.invasion-info .dot.win {
+  background: #5be37a;
+}
+
+.invasion-info .dot.lose {
+  background: #ff7a7a;
+}
+
+/* ───────── Event-Kurzguide ───────── */
+
+.event-guide {
+  margin-top: 2px;
+}
+
+.event-guide summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.event-guide summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-guide summary::before {
+  content: "▸";
+  transition: transform 0.15s ease;
+}
+
+.event-guide[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.event-guide ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 10px 12px;
+
+  background: rgba(10, 13, 16, 0.65);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.event-guide li {
+  position: relative;
+  padding-left: 14px;
+
+  color: #d3dbe0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.event-guide li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Tipp-Callout (blau) */
+.callout-tip {
+  background: rgba(74, 168, 255, 0.1);
+  border-color: rgba(74, 168, 255, 0.32);
+}
+
+.callout-tip strong {
+  color: #6fb8ff;
+}
+
+.invasion-group-note {
+  margin: 4px 0 0;
+  padding: 10px 12px;
+
+  color: #c3ccd2;
+  font-size: 0.8rem;
+  line-height: 1.45;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--warm);
+  border-radius: 0;
+}
+
+/* ───────── Codes ───────── */
+
+.codes-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 24px;
+
+  background: rgba(16, 21, 26, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-l);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 18px 32px -8px rgba(0, 0, 0, 0.7),
+    0 50px 80px -24px rgba(0, 0, 0, 0.85);
+}
+
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 10px;
+}
+
+.code-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+}
+
+.code-card code {
+  display: block;
+
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.code-card small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.code-copy {
+  flex-shrink: 0;
+  padding: 7px 14px;
+
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  background: var(--accent);
+  border-radius: 999px;
+  transition: filter 0.15s;
+}
+
+.code-copy:hover {
+  filter: brightness(1.1);
+}
+
+.code-copy.copied {
+  background: #5be37a;
+}
+
+.codes-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.codes-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ───────── Reiter-Navigation ───────── */
+
+.topnav {
+  gap: 2px;
+  padding: 4px;
+
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+}
+
+.topnav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 16px;
+
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.topnav a[hidden] {
+  display: none;
+}
+
+.topnav a::before {
+  content: attr(data-icon);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.topnav a.active {
+  color: var(--accent-ink);
+  background: var(--accent);
+  box-shadow: 0 4px 16px -4px rgba(184, 242, 60, 0.55);
+}
+
+/* ───────── Saison-Guide ───────── */
+
+.saison-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sg-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 24px;
+
+  background: rgba(16, 21, 26, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-l);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 18px 32px -8px rgba(0, 0, 0, 0.7),
+    0 50px 80px -24px rgba(0, 0, 0, 0.85);
+}
+
+.sg-intro > p {
+  margin: 0;
+  max-width: 70ch;
+  color: #d3dbe0;
+}
+
+.sg-section .block-title {
+  margin: 0 0 12px;
+}
+
+.sg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.sg-grid.steps {
+  counter-reset: sgstep;
+}
+
+.sg-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+
+  background: rgba(16, 21, 26, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-m);
+}
+
+.sg-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+
+  width: 46px;
+  height: 46px;
+
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  background: var(--surface-3);
+  border-radius: 12px;
+}
+
+.sg-step .sg-icon {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.sg-text h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  text-transform: uppercase;
+}
+
+.sg-text p {
+  margin: 0;
+  color: #c3ccd2;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.sg-badge {
+  padding: 2px 9px;
+
+  color: var(--warm);
+  font-family: var(--font);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+
+  background: var(--warm-soft);
+  border-radius: 999px;
+}
+
+/* ───────── Saison-Auswahl (Karten) ───────── */
+
+.sg-season-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.sg-season {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+
+  background: rgba(16, 21, 26, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 18px 32px -10px rgba(0, 0, 0, 0.7);
+}
+
+.sg-season.active {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 22px -4px rgba(184, 242, 60, 0.5),
+    0 18px 32px -10px rgba(0, 0, 0, 0.7);
+}
+
+.sg-cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  height: 130px;
+  overflow: hidden;
+
+  filter: saturate(0.7);
+}
+
+.sg-season.active .sg-cover,
+.sg-season:hover .sg-cover {
+  filter: none;
+}
+
+.sg-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sg-cover-letter {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-display);
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+}
+
+.sg-cover.s2 { background: linear-gradient(160deg, #f1b25e, #c1581f 70%, #6e2d0f); }
+.sg-cover.s3 { background: linear-gradient(160deg, #a5e9ff, #2f87c4 65%, #123a63); }
+.sg-cover.s4 { background: linear-gradient(160deg, #9bcf6b, #2f7a37 65%, #12331a); }
+.sg-cover.s5 { background: linear-gradient(160deg, #e0517a, #7b1534 60%, #1d0a22); }
+
+.sg-season-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+
+  padding: 2px 9px;
+
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  border-radius: 6px;
+}
+
+.sg-season-badge.s2 { background: #8a1c12; }
+.sg-season-badge.s3 { background: #1d5fa8; }
+.sg-season-badge.s4 { background: #3f7a16; }
+.sg-season-badge.s5 { background: #8f1230; }
+
+.sg-season-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 12px 14px 14px;
+}
+
+.sg-season-info strong {
+  font-size: 1.05rem;
+}
+
+.sg-season-info span {
+  color: #d3dbe0;
+  font-size: 0.85rem;
+}
+
+.sg-season-info small {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.sg-ended {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 3px 10px;
+
+  color: #ffb0b0;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background: rgba(255, 93, 93, 0.16);
+  border: 1px solid rgba(255, 93, 93, 0.45);
+  border-radius: 999px;
+}
+
+.sg-intro-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.sg-intro-head h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.sg-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  scroll-margin-top: 80px;
+}
+
+/* Großer Hinweis: Saison beendet */
+.sg-ended-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+
+  background: rgba(255, 93, 93, 0.14);
+  border: 2px solid rgba(255, 93, 93, 0.6);
+  border-radius: var(--radius-l);
+  box-shadow: 0 0 28px -8px rgba(255, 93, 93, 0.5);
+}
+
+.sg-ended-flag {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.sg-ended-banner strong {
+  display: block;
+
+  color: #ff8a8a;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.sg-ended-banner p {
+  margin: 2px 0 0;
+  color: #f0c9c9;
+  font-size: 0.95rem;
+}
+
+/* Kommende Saison (Coming Soon) */
+.sg-season.upcoming {
+  cursor: default;
+  border-style: dashed;
+  border-color: rgba(255, 181, 71, 0.5);
+}
+
+.sg-season.upcoming .sg-cover {
+  filter: none;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(255, 255, 255, 0.04) 14px 28px
+    ),
+    linear-gradient(160deg, #3a3350, #17141f 75%);
+}
+
+.sg-season.upcoming .sg-cover-letter {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sg-season-badge.s6 {
+  background: #8a5a12;
+}
+
+.sg-soon {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 3px 10px;
+
+  color: var(--warm);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background: var(--warm-soft);
+  border: 1px solid rgba(255, 181, 71, 0.45);
+  border-radius: 999px;
+}
+
+/* ───────── Rose der Woche ───────── */
+
+.rose-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px 40px;
+  margin-top: -28px;
+  padding: 24px 28px;
+
+  background:
+    linear-gradient(90deg, rgba(255, 181, 71, 0.12), transparent 60%),
+    rgba(16, 21, 26, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 5px solid var(--warm);
+  border-radius: var(--radius-l);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 18px 32px -8px rgba(0, 0, 0, 0.7),
+    0 50px 80px -24px rgba(0, 0, 0, 0.85);
+}
+
+.rose-strip[hidden] {
+  display: none;
+}
+
+.rose-main {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.rose-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  filter: drop-shadow(0 4px 12px rgba(255, 193, 43, 0.4));
+}
+
+.rose-icon img {
+  width: auto;
+  height: 92px;
+}
+
+.rose-main p {
+  margin: 0;
+}
+
+.rose-kicker {
+  color: var(--warm);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rose-count {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.rose-number {
+  color: #ffe9b8;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.rose-unit {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.rose-buff {
+  margin-top: 6px !important;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.rose-valid {
+  margin-top: 4px !important;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.rose-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding-left: 40px;
+  border-left: 1px solid var(--line);
+}
+
+.rose-howto {
+  margin: 0;
+  color: #d9e0e4;
+  font-size: 0.98rem;
+}
+
+.rose-copy {
+  padding: 10px 20px;
+
+  color: #ffe9b8;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  background: rgba(255, 181, 71, 0.14);
+  border: 1px solid rgba(255, 181, 71, 0.5);
+  border-radius: var(--radius-s);
+  transition: background 0.15s;
+}
+
+.rose-copy:hover {
+  background: rgba(255, 181, 71, 0.26);
+}
+
+.rose-copy.copied {
+  color: #0a2412;
+  background: #5be37a;
+  border-color: #5be37a;
+}
+
+.rose-hint {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+/* Cover mit eigenem Bild: quadratisch, Badge steckt schon im Bild */
+.sg-cover.has-image {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: none;
+}
+
+.sg-cover.has-image img {
+  object-fit: cover;
+
+  /* Die Bilder haben abgerundete, transparente Ecken. Leicht vergrößert laufen sie aus dem
+     Rahmen und werden von der Karte abgeschnitten. Das Badge im Bild bleibt sichtbar. */
+  transform: scale(1.07);
+}
+
+/* Season-6-Karte gleich hoch wie die Karten mit Bild */
+.sg-season.upcoming .sg-cover {
+  height: auto;
+  aspect-ratio: 1 / 1;
 }

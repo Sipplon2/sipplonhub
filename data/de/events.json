@@ -1,43 +1,70 @@
 [
-{
-  "id": "allianz-duell",
-  "title": "Allianz-Duell",
-  "background": "/assets/images/events/alliancebg.webp",
-  "description": "PvP-Event gegen den gegnerische Allianz.",
-  "icon": "/assets/images/events/alliance.webp",
-  "start": "2026-08-03T04:00:00",
-  "end": "2026-08-09T04:00:00",
-  "repeatDays": 7
-},
-{
-  "id": "server-war",
-  "title": "Server Krieg",
-  "background": "/assets/images/events/serverwarbg.webp",
-  "description": "PvP-Event gegen den gegnerischen Server.",
-  "icon": "assets/images/events/alliance.webp",
-  "start": "2026-08-08T04:00:00",
-  "end": "2026-08-09T04:00:00",
-  "repeatDays": 14
-},
-{
-  "id": "zombie-tyrann",
-  "title": "Zombie-Tyrann",
-  "background": "/assets/images/events/zombietyrannbg.webp",
+  {
+    "id": "allianz-duell",
+    "title": "Allianz-Duell",
+    "background": "/assets/images/events/alliancebg.webp",
+    "description": "PvP-Event gegen den gegnerische Allianz.",
+    "icon": "/assets/images/events/alliance.webp",
+    "start": "2026-08-03T04:00:00",
+    "end": "2026-08-09T04:00:00",
+    "repeatDays": 7,
+    "guide": [
+      "Radar etwa alle 8 Stunden prüfen. Aufgaben am Sonntag und Donnerstag erledigen, die Truhen aber erst am Montag und Freitag öffnen – die Punkte gibt es beim Öffnen. Das Radar-Limit nicht überschreiten, sonst gehen neue Aufgaben verloren.",
+      "Totale Bewaffnung: Die Punkte-Fenster sind um {{apo 08:00}} und {{apo 20:00}}.",
+      "Samstag (Feinde-Tag): Kostenloser Server-Teleport zum Gegner-Server. Der Rückweg landet zufällig im Allianz-Hive, danach gilt 20 Sekunden Wartezeit."
+    ]
+  },
+  {
+    "id": "server-war",
+    "title": "Server Krieg",
+    "background": "/assets/images/events/serverwarbg.webp",
+    "description": "PvP-Event gegen den gegnerischen Server.",
+    "icon": "assets/images/events/alliance.webp",
+    "start": "2026-09-26T16:00:00",
+    "end": "2026-09-26T20:00:00",
+    "repeatDays": 7,
+    "cycleDays": 28,
+    "activeDays": 14,
+    "guide": [
+      "Sonntag bis Freitag: Punkte sammeln (siehe „Kampf um die Invasion“). Der Server mit mehr Punkten bekommt das Recht auf Invasion und greift an.",
+      "Samstag: Kampf um die Hauptstadt. Er dauert 4 Stunden oder bis ein Server die Hauptstadt zu 100 % eingenommen hat.",
+      "Ziel für alle: die 9 persönlichen Belohnungsboxen freischalten (zusammen 2,25 Mio. Punkte). Das zählt auch bei einer Niederlage.",
+      "Valor-Medaillen lassen sich gegen orangene Ausrüstung tauschen."
+    ]
+  },
+  {
+    "id": "zombie-tyrann",
+    "title": "Zombie-Tyrann",
+    "background": "/assets/images/events/zombietyrannbg.webp",
     "backgroundCrop": 0.31,
-  "description": "PvE-Event gegen den Zombie-Tyrann.",
-  "icon": "assets/images/events/alliance.webp",
-  "start": "2026-08-07T17:00:00",
-  "end": "2026-08-07T17:25:00",
-  "repeatDays": 3
-},
-{
-  "id": "canyon-clash",
-  "title": "Schluchtkampf",
-  "background": "/assets/images/events/canyonclashbg.webp",
-  "description": "PvP-Event gegen eine gegnerische Allianz.",
-  "icon": "assets/images/events/alliance.webp",
-  "start": "2026-08-07T13:00:00",
-  "end": "2026-08-07T13:40:00",
-  "repeatDays": 7
-}
+    "description": "PvE-Event gegen den Zombie-Tyrann.",
+    "icon": "assets/images/events/alliance.webp",
+    "start": "2026-08-07T17:00:00",
+    "end": "2026-08-07T17:25:00",
+    "repeatDays": 3,
+    "guide": [
+      "Nur Rallys mit 7 bis 8 Mitgliedern starten oder beitreten.",
+      "Erst offene Rallys auffüllen, dann neue starten.",
+      "Truppen etwa 5 Minuten vor dem Start zurückrufen.",
+      "R4/R5 beschwören den Tyrann, danach laufen 15 Minuten. Die Allianz braucht mehr als 20 Mitglieder.",
+      "Nicht live dabei? „Offline kämpfen“ aktivieren."
+    ]
+  },
+  {
+    "id": "canyon-clash",
+    "title": "Schluchtkampf",
+    "background": "/assets/images/events/canyonclashbg.webp",
+    "description": "PvP-Event gegen eine gegnerische Allianz.",
+    "icon": "assets/images/events/alliance.webp",
+    "start": "2026-08-07T13:00:00",
+    "end": "2026-08-07T13:40:00",
+    "repeatDays": 7,
+    "guide": [
+      "Wochenablauf: Abstimmung Mo/Di, Anmeldung Mi, Matchmaking Do, Kampf am Freitag.",
+      "Voraussetzung: Allianz in den Top 20, mindestens 40 Mitglieder, Spieler seit mindestens 24 Stunden in der Allianz.",
+      "Ablauf: 10 Minuten Vorbereitung, 40 Minuten Kampf, 10 Minuten Auswertung.",
+      "Ziel: Gebäude kontrollieren statt Kills jagen. Energiezellen nur mit Begleitschutz tragen.",
+      "Die genaue Uhrzeit steht im Eventcenter unter Schluchtkampf (in Apo-Zeit)."
+    ]
+  }
 ]

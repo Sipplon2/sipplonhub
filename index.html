@@ -11,6 +11,9 @@
 
   <title>ISS | Last Z Hub</title>
 
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/favicon.png">
+
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -27,12 +30,21 @@
       </a>
 
       <nav class="topnav" aria-label="Bereiche">
-        <a href="#alliance" id="nav-alliance">Allianz-Duell</a>
-        <a href="#season" id="nav-season">Saison</a>
-        <a href="#events" id="nav-events">Events</a>
+        <a href="#today" id="nav-today" data-tab-link="today" data-icon="🏠">Heute</a>
+        <a href="#events" id="nav-events" data-tab-link="events" data-icon="📆">Events</a>
+        <a href="#saison" id="nav-saison" data-tab-link="saison" data-icon="🌙">Saison</a>
+        <a href="#war" id="nav-war" data-tab-link="war" data-icon="⚔️" hidden>Kriegswoche</a>
+        <a href="#codes" id="nav-codes" data-tab-link="codes" data-icon="🎁" hidden>Codes</a>
       </nav>
 
       <div class="topbar-tools">
+        <span id="time-clock" class="time-clock" aria-live="off"></span>
+
+        <div class="time-switch" role="group" aria-label="Zeitanzeige">
+          <button type="button" class="time-button active" data-time-mode="local" id="time-local">Lokal</button>
+          <button type="button" class="time-button" data-time-mode="apo" id="time-apo">Apo</button>
+        </div>
+
         <div class="language-switcher">
           <button type="button" class="language-button active" data-language="de" aria-label="Deutsch">
             <img src="assets/icons/de.svg" alt="Deutsch">
@@ -66,11 +78,14 @@
   </header>
 
   <main id="top" class="page">
+    <div class="tab-panel" data-tab-panel="today">
     <section class="intro" aria-label="Heute">
       <div id="next-event" class="next-event">
         <p class="events-loading">Nächstes Event wird geladen …</p>
       </div>
     </section>
+
+    <div id="rose-strip" class="rose-strip" hidden></div>
 
     <div class="duo">
     <section id="alliance" class="section" aria-labelledby="alliance-title">
@@ -114,6 +129,38 @@
 
     </div>
 
+    </div>
+
+    <div class="tab-panel" data-tab-panel="saison" hidden>
+    <section id="saison" class="section" aria-labelledby="saison-title">
+      <header class="section-head">
+        <span class="section-icon section-icon-emoji" aria-hidden="true">🌙</span>
+        <div>
+          <h2 id="saison-title">Saison</h2>
+          <p id="saison-subtitle"></p>
+        </div>
+      </header>
+
+      <div id="saison-body" class="saison-body"></div>
+    </section>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="war" hidden>
+    <section id="invasion" class="section invasion" hidden aria-labelledby="invasion-title">
+      <header class="section-head">
+        <span class="section-icon section-icon-emoji" aria-hidden="true">⚔️</span>
+        <div>
+          <h2 id="invasion-title">Kampf um die Invasion</h2>
+          <p id="invasion-subtitle"></p>
+        </div>
+      </header>
+
+      <div id="invasion-body" class="section-body invasion-body"></div>
+    </section>
+
+    </div>
+
+    <div class="tab-panel" data-tab-panel="events" hidden>
     <section id="events" class="section" aria-labelledby="events-title">
       <header class="section-head">
         <span class="section-icon section-icon-emoji" aria-hidden="true">📆</span>
@@ -126,6 +173,21 @@
 
       <div id="events-list" class="events-list"></div>
     </section>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="codes" hidden>
+    <section id="codes" class="section" hidden aria-labelledby="codes-title">
+      <header class="section-head">
+        <span class="section-icon section-icon-emoji" aria-hidden="true">🎁</span>
+        <div>
+          <h2 id="codes-title">Geschenkcodes</h2>
+          <p id="codes-subtitle"></p>
+        </div>
+      </header>
+
+      <div id="codes-body" class="section-body codes-body"></div>
+    </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -133,9 +195,15 @@
     <p>Inoffizieller Community-Hub für Last Z.</p>
   </footer>
 
+  <script src="js/timeMode.js"></script>
   <script src="js/weeklyPlan.js"></script>
   <script src="js/allianceDuel.js"></script>
   <script src="js/events.js"></script>
+  <script src="js/invasion.js"></script>
+  <script src="js/codes.js"></script>
+  <script src="js/seasonGuide.js"></script>
+  <script src="js/rose.js"></script>
+  <script src="js/tabs.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

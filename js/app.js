@@ -11,13 +11,19 @@ const staticTexts = {
     eventsEyebrow: "Termine & Countdowns",
     eventsTitle: "Events",
     eventsSubtitle: "Kommende Last-Z-Termine auf einen Blick.",
+    timeLocal: "Lokal",
+    timeApo: "Apo",
+    timeLocalTitle: "Deine lokale Zeit anzeigen",
+    timeApoTitle: "Weltuntergangszeit (Spielzeit) anzeigen",
     comingSoon: "Coming Soon",
     comingSoonText: "Die Saison-Aufgaben erscheinen, sobald die Saison startet.",
     introEyebrow: "Heute",
     introSub: "Inoffizieller Community-Hub für Last Z.",
-    navAlliance: "Allianz-Duell",
-    navSeason: "Saison",
+    navToday: "Heute",
     navEvents: "Events",
+    navSaison: "Saison",
+    navWar: "Kriegswoche",
+    navCodes: "Codes",
   },
 
   en: {
@@ -28,13 +34,19 @@ const staticTexts = {
     eventsEyebrow: "Dates & Countdowns",
     eventsTitle: "Events",
     eventsSubtitle: "Upcoming Last Z events at a glance.",
+    timeLocal: "Local",
+    timeApo: "Apo",
+    timeLocalTitle: "Show your local time",
+    timeApoTitle: "Show Apocalypse time (in-game time)",
     comingSoon: "Coming Soon",
     comingSoonText: "Season missions will appear as soon as the season starts.",
     introEyebrow: "Today",
     introSub: "Unofficial community hub for Last Z.",
-    navAlliance: "Alliance Duel",
-    navSeason: "Season",
+    navToday: "Today",
     navEvents: "Events",
+    navSaison: "Season",
+    navWar: "War week",
+    navCodes: "Codes",
   },
 };
 
@@ -54,6 +66,22 @@ async function initializeWebsite() {
 
     if (typeof initEvents === "function") {
       await initEvents();
+    }
+
+    if (typeof initInvasion === "function") {
+      await initInvasion();
+    }
+
+    if (typeof initCodes === "function") {
+      await initCodes();
+    }
+
+    if (typeof initSeasonGuide === "function") {
+      await initSeasonGuide();
+    }
+
+    if (typeof initRose === "function") {
+      await initRose();
     }
   } catch (error) {
     console.error(
@@ -103,19 +131,20 @@ function updateStaticTexts() {
     texts.eventsSubtitle
   );
 
+  setTextContent("#time-local", texts.timeLocal);
+  setTextContent("#time-apo", texts.timeApo);
+  document.querySelector("#time-local")?.setAttribute("title", texts.timeLocalTitle);
+  document.querySelector("#time-apo")?.setAttribute("title", texts.timeApoTitle);
+
   setTextContent("#season-soon-title", texts.comingSoon);
   setTextContent("#season-soon-text", texts.comingSoonText);
   setTextContent("#intro-eyebrow", texts.introEyebrow);
-  setTextContent("#nav-alliance", texts.navAlliance);
-  setTextContent("#nav-season", texts.navSeason);
+  setTextContent("#nav-today", texts.navToday);
   setTextContent("#nav-events", texts.navEvents);
+  setTextContent("#nav-saison", texts.navSaison);
+  setTextContent("#nav-war", texts.navWar);
+  setTextContent("#nav-codes", texts.navCodes);
 
-  const dayName = new Intl.DateTimeFormat(
-    currentLanguage === "en" ? "en-US" : "de-DE",
-    { weekday: "long" }
-  ).format(new Date());
-
-  setTextContent("#intro-day", dayName);
   setTextContent("#intro-sub", texts.introSub);
 
   document.documentElement.lang =
@@ -172,3 +201,53 @@ function registerLanguageButtons() {
 
 registerLanguageButtons();
 initializeWebsite();
+
+function updateTimeModeUi() {
+  for (const button of document.querySelectorAll("[data-time-mode]")) {
+    const isActive = button.dataset.timeMode === timeMode;
+
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  }
+
+  const clock = document.querySelector("#time-clock");
+
+  if (clock) {
+    clock.textContent = formatClock();
+    clock.classList.toggle("apo", timeMode === "apo");
+  }
+}
+
+function registerTimeModeButtons() {
+  for (const button of document.querySelectorAll("[data-time-mode]")) {
+    button.addEventListener("click", () => {
+      if (button.dataset.timeMode === timeMode) {
+        return;
+      }
+
+      setTimeMode(button.dataset.timeMode);
+      updateTimeModeUi();
+
+      if (typeof renderEvents === "function") {
+        renderEvents();
+      }
+
+      if (typeof renderAllianceDuelContent === "function") {
+        renderAllianceDuelContent();
+      }
+
+      if (typeof renderInvasion === "function") {
+        renderInvasion();
+      }
+
+      if (typeof renderSeasonGuide === "function") {
+        renderSeasonGuide();
+      }
+    });
+  }
+
+  updateTimeModeUi();
+  window.setInterval(updateTimeModeUi, 1000);
+}
+
+registerTimeModeButtons();

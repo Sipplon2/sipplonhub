@@ -3,7 +3,7 @@
     "day": 1,
     "dayName": "Montag",
     "title": "Modifizierungsfahrzeug-Erhöhung",
-    "image":"monday.webp",
+    "image": "monday.webp",
     "tasks": [
       {
         "icon": "bauplan.webp",
@@ -34,13 +34,14 @@
         "name": "Sukkubus Level 1-60 besiegen"
       }
     ],
-    "strategy": "Nutze Schraubenschlüssel und Baupläne erst um 08:00 oder 20:00 Apo-Time!!! Zombies auch erst um 08:00 oder 20:00 Apo-Time erledigen! So holst du direkt auch Punkte für deine Totale Bewaffnung."
+    "strategy": "Nutze Schraubenschlüssel und Baupläne erst um {{apo 08:00}} oder {{apo 20:00}}!!! Zombies auch erst um {{apo 08:00}} oder {{apo 20:00}} erledigen! So holst du direkt auch Punkte für deine Totale Bewaffnung.",
+    "tip": "Radar-Aufgaben vom Sonntag jetzt öffnen: Die Punkte gibt es erst beim Öffnen der Truhen."
   },
   {
     "day": 2,
     "dayName": "Dienstag",
     "title": "Bau des Unterschlupfs",
-    "image":"tuesday.webp",
+    "image": "tuesday.webp",
     "tasks": [
       {
         "icon": "baubeschleuniger.webp",
@@ -67,13 +68,13 @@
         "name": "Flüchtling rekrutieren"
       }
     ],
-    "strategy": "Gebäude beenden und das nutzen von Bau-Beschleuniger erst um 08:00 oder 20:00 Apo-Time!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
+    "strategy": "Gebäude beenden und das nutzen von Bau-Beschleuniger erst um {{apo 08:00}} oder {{apo 20:00}}!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
   },
   {
     "day": 3,
     "dayName": "Mittwoch",
     "title": "Forschung der Technologie",
-    "image":"wednesday.webp",
+    "image": "wednesday.webp",
     "tasks": [
       {
         "icon": "forschungsbeschleuniger.webp",
@@ -92,13 +93,13 @@
         "name": "orangenen Intercity Handel durchführen"
       }
     ],
-    "strategy": "Forschung beenden und das nutzen von Forschungs-Beschleuniger erst um 08:00 oder 20:00 Apo-Time!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
+    "strategy": "Forschung beenden und das nutzen von Forschungs-Beschleuniger erst um {{apo 08:00}} oder {{apo 20:00}}!!! So holst du direkt auch Punkte für deine Totale Bewaffnung."
   },
   {
     "day": 4,
     "dayName": "Donnerstag",
     "title": "Entwicklung von Helden",
-    "image":"thursday.webp",
+    "image": "thursday.webp",
     "tasks": [
       {
         "icon": "heldenfragment.webp",
@@ -137,13 +138,13 @@
         "name": "Durchbruchkristall verwenden"
       }
     ],
-    "strategy": "Heute sind nur fortgeschrittene Rekrutierungen beim Allianz Duell und der Totalen Bewaffnung. Heute musst du NICHT unbedingt drauf achten. Falls du es trotzdem machen willst - Rekrutierungen erst um 08:00 oder 20:00 Apo-Time."
+    "strategy": "Heute sind nur fortgeschrittene Rekrutierungen beim Allianz Duell und der Totalen Bewaffnung. Heute musst du NICHT unbedingt drauf achten. Falls du es trotzdem machen willst - Rekrutierungen erst um {{apo 08:00}} oder {{apo 20:00}}."
   },
   {
     "day": 5,
     "dayName": "Freitag",
     "title": "Totale Entwicklung",
-    "image":"friday.webp",
+    "image": "friday.webp",
     "tasks": [
       {
         "icon": "beliebebeschleuniger.webp",
@@ -166,13 +167,14 @@
         "name": "Trainiere und gewinne einen Soldaten auf Level 1-10"
       }
     ],
-    "strategy": "Heute wie folgt Punkte machen: 04:00 Bau-Beschleuniger benutzen und Gebäude Kampfkraft erhöhen. | 08:00 Apo-Time Soldaten trainieren. | 12:00 Apo-Time Forschungsbeschleuniger und Forschung erhöhen. | 20:00 Apo-Time Nochmal Soldaten trainieren. | So machst du jedes mal für Allianz Duell und Totale Bewaffnung Punkte."
+    "strategy": "Heute wie folgt Punkte machen: {{apo 00:00}} Bau-Beschleuniger benutzen und Gebäude Kampfkraft erhöhen. | {{apo 08:00}} Soldaten trainieren. | {{apo 12:00}} Forschungsbeschleuniger und Forschung erhöhen. | {{apo 20:00}} Nochmal Soldaten trainieren. | So machst du jedes mal für Allianz Duell und Totale Bewaffnung Punkte.",
+    "tip": "Radar-Aufgaben vom Donnerstag jetzt öffnen: Die Punkte gibt es erst beim Öffnen der Truhen."
   },
   {
     "day": 6,
     "dayName": "Samstag",
     "title": "Vernichtung der Feinde",
-    "image":"saturday.webp",
+    "image": "saturday.webp",
     "tasks": [
       {
         "icon": "beliebebeschleuniger.webp",
@@ -185,8 +187,13 @@
       {
         "icon": "goldtruck.webp",
         "name": "orangenen Intercity Handel durchführen"
+      },
+      {
+        "icon": "soldatenbesiegen.png",
+        "name": "Besiege Soldaten auf Lv.9 (Extrapunkte bei gegnerischer Allianz)"
       }
     ],
-    "strategy": "Heute kannst du Totale Bewaffnung und Allianz Duell nicht kombinieren. Einfach normal deine 3 Kisten über den Tag erledigen."
+    "strategy": "Heute kannst du Totale Bewaffnung und Allianz Duell nicht kombinieren. Einfach normal deine 3 Kisten über den Tag erledigen.",
+    "tip": "Kostenloser Server-Teleport zum Gegner-Server, nur heute. Der Rückweg landet zufällig im Allianz-Hive, danach gilt 20 Sekunden Wartezeit."
   }
 ]

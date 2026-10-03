@@ -88,7 +88,7 @@ function isValidAllianceDuelEntry(entry) {
 
 function getInitialAllianceDuelDay() {
   const currentDay =
-    new Date().getDay();
+    getGameDay();
 
   const availableDays =
     allianceDuelEntries.map(
@@ -110,7 +110,7 @@ function renderAllianceDuelTabs() {
     return;
   }
 
-  const today = new Date().getDay();
+  const today = getGameDay();
 
   tabsContainer.innerHTML =
     allianceDuelEntries
@@ -267,7 +267,21 @@ function renderAllianceDuelContent() {
                 <span class="callout-mark" aria-hidden="true">💡</span>
                 <div>
                   <strong>${isEnglish ? "Strategy" : "Totale Bewaffnung"}</strong>
-                  <p>${escapeAllianceDuelHtml(entry.strategy)}</p>
+                  <p>${applyTimeTokens(escapeAllianceDuelHtml(entry.strategy))}</p>
+                </div>
+              </article>
+            `
+            : ""
+        }
+
+        ${
+          entry.tip
+            ? `
+              <article class="callout callout-tip">
+                <span class="callout-mark" aria-hidden="true">ℹ️</span>
+                <div>
+                  <strong>${isEnglish ? "Tip" : "Tipp"}</strong>
+                  <p>${applyTimeTokens(escapeAllianceDuelHtml(entry.tip))}</p>
                 </div>
               </article>
             `

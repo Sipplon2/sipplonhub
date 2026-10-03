@@ -1,0 +1,65 @@
+{
+  "title": "Battle for the Right to Invade",
+  "subtitle": "War week: these points decide who attacks in the Server War.",
+  "attackerTitle": "If our server wins during the week",
+  "attackerText": "We earn the right to invade and attack the opposing server.",
+  "defenderTitle": "If our server loses during the week",
+  "defenderText": "The opposing server earns the right to invade and attacks us.",
+  "groupsTitle": "Points are compared here",
+  "groups": [
+    {
+      "name": "Alliance",
+      "tasks": [
+        {
+          "icon": "⚔️",
+          "name": "Win the Alliance Duel"
+        },
+        {
+          "icon": "🥇",
+          "name": "Rank 1 in the daily Alliance Duel"
+        },
+        {
+          "icon": "🛡️",
+          "name": "Rank 1 in Full Preparedness"
+        }
+      ]
+    },
+    {
+      "name": "Arena",
+      "tasks": [
+        {
+          "icon": "🏟️",
+          "name": "Rank 1 in the Arena"
+        }
+      ]
+    },
+    {
+      "name": "Trucks",
+      "tasks": [
+        {
+          "icon": "🚚",
+          "name": "Dispatch a truck once"
+        },
+        {
+          "icon": "💥",
+          "name": "Successfully plunder 1 truck in the enemy war zone"
+        }
+      ]
+    },
+    {
+      "name": "War zone",
+      "tasks": [
+        {
+          "icon": "🎯",
+          "name": "Win the war zone total damage contest [Raging Leader]"
+        },
+        {
+          "icon": "🏅",
+          "name": "1st place in personal damage on [Raging Leader]"
+        }
+      ],
+      "note": "Raging Leader: 4 times a day for 3 hours each ({{apo 00:00-03:00}}, {{apo 06:00-09:00}}, {{apo 12:00-15:00}}, {{apo 18:00-21:00}}), not on Sundays. Only your highest single hit of the day counts."
+    }
+  ],
+  "infoTitle": "Good to know: what happens after the week?"
+}

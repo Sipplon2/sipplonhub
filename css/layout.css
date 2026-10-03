@@ -79,3 +79,28 @@
 .duo .section-body {
   flex: 1;
 }
+
+.tab-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 56px;
+
+  animation: tab-in 0.25s ease;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+@keyframes tab-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel {
+    animation: none;
+  }
+}

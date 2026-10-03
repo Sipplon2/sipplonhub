@@ -1,0 +1,566 @@
+{
+  "title": "Seasons",
+  "subtitle": "Guides for all seasons. Seasons 2 to 5 have ended.",
+  "upcoming": {
+    "id": "s6",
+    "tab": "S6",
+    "name": "Not announced yet",
+    "meta": "Waiting for the start",
+    "soonLabel": "Coming Soon"
+  },
+  "endedLabel": "Ended",
+  "endedText": "This season has ended. The guide stays up as a reference.",
+  "seasons": [
+    {
+      "id": "s5",
+      "tab": "S5",
+      "name": "Moonlit Elegy",
+      "theme": "🌙",
+      "cover": "assets/images/seasons/s5.webp",
+      "meta": "Vampires · 71 days",
+      "intro": "A vampire season with Werewolves and Succubi. The core stays as in earlier seasons: upgrade season buildings, defeat monsters and score points in glory wars.",
+      "sections": [
+        {
+          "title": "Monsters",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🐺",
+              "title": "Werewolf",
+              "badge": "8 fuel",
+              "text": "Easier to defeat, ideal while your Serum Lab is still low. Drops Shadow Blood Crystals. The first kill of the day gives a Demon Stone."
+            },
+            {
+              "icon": "😈",
+              "title": "Succubus / Knight Scubus",
+              "badge": "16 fuel",
+              "text": "Harder and needs high virus resistance (Serum Lab). Drops more Blood Crystals and also gives a Demon Stone on the first kill."
+            },
+            {
+              "icon": "🐕",
+              "title": "Raging Leader: Serverus",
+              "text": "The season's new boss, a vampire-themed hellhound. As in earlier seasons it appears on the map and can attack bases."
+            }
+          ],
+          "note": "The daily monster limit was not confirmed at launch. Earlier it was 30 in the first week and 15 afterwards."
+        },
+        {
+          "title": "Season buildings: in this order",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧪",
+              "title": "Serum Lab",
+              "text": "Grants virus resistance. Without it you can't hit high-level monsters and so get fewer Blood Crystals. The biggest bottleneck of the season, keep upgrading it."
+            },
+            {
+              "icon": "💧",
+              "title": "Shadow Spring",
+              "text": "Mines Holy Water, one of the two resources for building upgrades."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat buildings",
+              "text": "Command Center (more damage), Fire Control Center (more attack) and Defensive Fortress (more defense). Upgrade them afterwards."
+            },
+            {
+              "icon": "🛡️",
+              "title": "The rest",
+              "text": "After the first three, upgrade by resources."
+            }
+          ],
+          "note": "As in earlier seasons, personal rewards at the end depended on the season resources you collected."
+        },
+        {
+          "title": "Season resources",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "💧",
+              "title": "Holy Water",
+              "text": "Comes passively from the Shadow Spring and is needed for all season buildings."
+            },
+            {
+              "icon": "🩸",
+              "title": "Shadow Blood Crystal",
+              "text": "Comes from defeating Werewolves and Succubi. Needed together with Holy Water for upgrades."
+            },
+            {
+              "icon": "🪨",
+              "title": "Demon Stone",
+              "text": "A golden chest on the first kill of a monster. Delivered to the Mysterious Witch."
+            },
+            {
+              "icon": "🌙",
+              "title": "Moon Token",
+              "text": "Created when you get a Moonlight Card you already own. Currency for the Night Market."
+            }
+          ]
+        },
+        {
+          "title": "Nightfall",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "⏰",
+              "title": "Times",
+              "text": "Every day at {{apo 08:00}} and {{apo 16:00}}."
+            },
+            {
+              "icon": "📈",
+              "title": "Duration",
+              "text": "One hour in week 1, one hour longer each week. In week 8 eternal night begins."
+            },
+            {
+              "icon": "🏆",
+              "title": "Ranking",
+              "text": "Weekly, by the highest Knight Scubus defeated. Only the player who starts the rally and lands the kill counts, not the participants."
+            },
+            {
+              "icon": "✅",
+              "title": "Rewards",
+              "text": "For all rewards you needed to start or join 80 rallies."
+            }
+          ]
+        },
+        {
+          "title": "Mysterious Witch and Moonlight Cards",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "3",
+              "title": "Level 3: Moonlight Watcher",
+              "text": "You can exchange Moon Watchers for Moonlight Cards."
+            },
+            {
+              "icon": "10",
+              "title": "Level 10: Moonlight Blessing",
+              "text": "You can equip cards to your troops."
+            },
+            {
+              "icon": "21",
+              "title": "Level 21: More slots",
+              "text": "More slots for cards equipped at the same time."
+            },
+            {
+              "icon": "33",
+              "title": "Level 33: 12 active cards",
+              "text": "All 12 slots are open and the buffs work at 100%."
+            }
+          ],
+          "note": "There are 52 cards with buffs to defense, attack, HP and damage (Golden is strongest, then Purple, then Blue). The effects only lasted for this season."
+        },
+        {
+          "title": "Season events",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌙",
+              "title": "Nightfall",
+              "badge": "from day 1",
+              "text": "The season's main combat event, see above."
+            },
+            {
+              "icon": "🔮",
+              "title": "Mysterious Witch",
+              "badge": "from day 1",
+              "text": "Deliver Demon Stones. The Glory Chest was available every 8 hours with badges and Z currency."
+            },
+            {
+              "icon": "🏹",
+              "title": "Demon Hunter Assignment",
+              "badge": "at reset",
+              "text": "Special hunting assignments for rewards."
+            },
+            {
+              "icon": "🌅",
+              "title": "House of Dawn",
+              "badge": "Sundays",
+              "text": "Opened every Sunday."
+            },
+            {
+              "icon": "🏪",
+              "title": "Trading Stations and Night Market",
+              "badge": "from day 11",
+              "text": "The Night Market accepted Moon Tokens from duplicate cards."
+            },
+            {
+              "icon": "🛒",
+              "title": "Camila's Shop",
+              "badge": "from day 1",
+              "text": "Chest event with red fragments."
+            }
+          ]
+        },
+        {
+          "title": "Awakening and mastery",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌟",
+              "title": "Awakening: Oliveira, Scarlett, Evely",
+              "text": "Instead of recruitment tickets, ranking prizes were S5 awakening badges. They worked universally. You needed 5 stars to awaken."
+            },
+            {
+              "icon": "🎓",
+              "title": "Mastery up to level 90",
+              "text": "The limit rose from 70 to 90. Support was the best choice for most players (shorter research, higher VIP limit). Combat paid off from level 30 for active PvP players."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tab": "S4",
+      "name": "Dinosaur Origin",
+      "theme": "🦕",
+      "cover": "assets/images/seasons/s4.webp",
+      "meta": "Jungle · 91 days",
+      "intro": "The longest and most complex season so far: 13 weeks on a jungle map with dinosaurs instead of zombies, many events and new systems.",
+      "sections": [
+        {
+          "title": "Good to know",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "💎",
+              "title": "Save diamonds",
+              "text": "Season 4 was less free-to-play friendly than Season 3, mainly because Trade Hubs cost diamonds. Saving diamonds beforehand was recommended."
+            },
+            {
+              "icon": "🦸",
+              "title": "Three new heroes",
+              "text": "Yu Chan (Blood Rose), Queenie (Wings of Dawn) and Amber (Guard of Order), each with their own pass and exclusive weapon. If you missed a pass, you could still unlock the heroes through fragments after about 6 weeks."
+            },
+            {
+              "icon": "🔄",
+              "title": "Hero Level Swap",
+              "text": "You could permanently swap hero and skill levels between two heroes, transferring all your investment to a new S4 hero."
+            }
+          ]
+        },
+        {
+          "title": "Season buildings: in this order",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧬",
+              "title": "Biotech Lab",
+              "text": "Grants virus resistance and decides which dinosaurs you can attack. Once you defeat level 60 dinosaurs, upgrading it further is no longer required."
+            },
+            {
+              "icon": "🌿",
+              "title": "Bio Greenhouse",
+              "text": "Produces Fern Leaves, the main resource. Build all 4 from the start, the 5th came with the Wartime Investment."
+            },
+            {
+              "icon": "🏯",
+              "title": "Alliance Centers (×3)",
+              "text": "Required for the Glory War. Build them as early as possible."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat buildings (level 60+)",
+              "text": "Command Center (damage), Armory ×2 (attack), Fortification ×2 (defense). Don't rush them, virus resistance comes first."
+            }
+          ]
+        },
+        {
+          "title": "Resources and NPCs",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌿",
+              "title": "Fern Leaves",
+              "text": "Come from the Bio Greenhouses, the main resource for all season buildings."
+            },
+            {
+              "icon": "⚖️",
+              "title": "Cretaceous Scales",
+              "text": "Come from defeating NPCs on the map. The second important resource for buildings."
+            },
+            {
+              "icon": "🦖",
+              "title": "Velociraptors",
+              "badge": "15 rewards/day",
+              "text": "Priority 1. Your main daily source: Cretaceous Scales and glory. Always attack the highest level you can."
+            },
+            {
+              "icon": "🦕",
+              "title": "Stegosauruses",
+              "badge": "15 rewards/day",
+              "text": "Priority 2. Drop Ancient Dino Eggs and Cretaceous Scales. Share the daily limit with Velociraptors."
+            },
+            {
+              "icon": "🦅",
+              "title": "Predator Squads",
+              "badge": "2 kills/day, 5 on Sundays",
+              "text": "Up to level 200 on the map. Drop season resources, eggs, blueprints and hero EXP."
+            }
+          ],
+          "note": "Glory Chest every 8 hours: up to 148 badges without Season Journey, doubled with the pass. If you can't beat high-level dinosaurs alone, join rallies from stronger players and you still earn glory."
+        },
+        {
+          "title": "Season events",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🦖",
+              "title": "Ancient Dino",
+              "badge": "Sundays {{apo 12:00}}",
+              "text": "Every Sunday. Everyone attacks a massive dinosaur with no attack limit. The top 3 on the first kill receive a title. The event only lasts minutes."
+            },
+            {
+              "icon": "🥚",
+              "title": "Dino Rescue and Black Market Guardian",
+              "badge": "Sundays",
+              "text": "The Guardian (up to level 350) needs a rally. State achievements give rewards to all players."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Dino Egg Defense",
+              "text": "Similar to Zombie Siege. Completion matters more than ranking, and gives up to 14 Golden Wrenches."
+            },
+            {
+              "icon": "🏪",
+              "title": "Trade Hubs",
+              "badge": "Mon/Wed/Fri {{apo 11:00}}",
+              "text": "Three levels, state-only at first, cross-state later. All purchases cost diamonds."
+            },
+            {
+              "icon": "📖",
+              "title": "Fossil Album",
+              "text": "Collect 20 different fossils from the Ancient Dino event. Duplicates turn into Ancient Dino Eggs."
+            },
+            {
+              "icon": "🏬",
+              "title": "Bio Institute Shop",
+              "badge": "Sat/Sun",
+              "text": "Only open on Saturdays and Sundays, bought with Ancient Dino Eggs, 14 refreshes per weekend."
+            }
+          ]
+        },
+        {
+          "title": "Hatch of Legends and Glory War",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🥚",
+              "title": "Hatch of Legends",
+              "text": "You raise a dinosaur to level 30 (T-Rex, Triceratops or Ankylosaurus, one species per season). Each level gives +1% troop attack, up to +30%. At level 16 you get a vehicle skin. It is fed with Dino Feed and Pine Cones."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Glory War",
+              "badge": "Tuesdays",
+              "text": "Your state was grouped with 3 other states. The wars ran every Tuesday. Higher rankings gave better rewards, including S4 recruitment tickets."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "tab": "S3",
+      "name": "Snow Monsters",
+      "theme": "❄️",
+      "cover": "assets/images/seasons/s3.webp",
+      "meta": "Snow · 70 days",
+      "intro": "Similar structure to Season 2, but with a focus on raids against snow bosses. The map turns into a frozen wasteland.",
+      "sections": [
+        {
+          "title": "Season buildings: in this order",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧬",
+              "title": "Biological Laboratory",
+              "text": "Grants virus resistance so you can attack higher Boomers. Boomers drop Ice Cores, needed for all buildings. The most important building."
+            },
+            {
+              "icon": "🌸",
+              "title": "Temperature Control Center",
+              "text": "Produces Lotus Flowers, the main upgrade resource. Upgrade it once you have enough Ice Cores."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat buildings",
+              "text": "Glacial Military Depot (attack), Glacial Fortress (defense) and Military Command (damage). Only once the Lab and Control Center are in good shape."
+            },
+            {
+              "icon": "🛡️",
+              "title": "The rest",
+              "text": "Upgrade by resources."
+            }
+          ],
+          "note": "Personal rewards at the end depended on the season resources you had stored."
+        },
+        {
+          "title": "Raids: 15 rewards per day",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "❄️",
+              "title": "Boomers (Snow Zombies)",
+              "text": "Priority 1. Drop twice the Ice Cores of the Leopard. After server reset, start with 15 of them."
+            },
+            {
+              "icon": "🐆",
+              "title": "Snow Leopard",
+              "text": "Medium priority. Only take the first kill once your 15 Boomer rewards are used."
+            },
+            {
+              "icon": "🦍",
+              "title": "Yeti (wandering boss)",
+              "text": "Advanced, level 100 to 350. Only 2 rewards per day, and only if you take part in the final raid. Many troops end up in the hospital, only with a strong alliance."
+            }
+          ],
+          "note": "Yeti tip: if the Yeti approaches your base, start a raid and cancel it immediately. It then takes a different route and you avoid damage."
+        },
+        {
+          "title": "Season events",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌨️",
+              "title": "Snowstorm Rescue",
+              "badge": "Days 1–3",
+              "text": "Days 1 to 3 of Alliance vs Alliance. 10 rewards per day. Look for large ice sculptures only and share their location in alliance chat."
+            },
+            {
+              "icon": "🦣",
+              "title": "Mammoth sculpture",
+              "text": "Gives 2 fragments for an exclusive season weapon."
+            },
+            {
+              "icon": "🦌",
+              "title": "Deer sculpture",
+              "text": "Gives 300 badges."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Glory War",
+              "text": "The most important event. The winner can steal season points from the loser. It decides the final ranking."
+            }
+          ]
+        },
+        {
+          "title": "Specialization",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🤝",
+              "title": "Support",
+              "text": "Recommended for everyone. Below level 30 you are Support by default. Includes Friendship Shield, Treasure Master, cooperative building and research."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat",
+              "text": "Selectable from level 30, useful for players with over 48 million hero power. Includes Emergency Recruitment (150 soldiers daily), Disguise, Quick Attack and Immediate Return."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "tab": "S2",
+      "name": "Desert Guardian",
+      "theme": "🏜️",
+      "cover": "assets/images/seasons/s2.webp",
+      "meta": "Desert · about 80 days",
+      "intro": "A desert season built around resource plots on the map instead of bosses. The desert map covers zones 1 to 320 (from zone 321 the season was ice-themed).",
+      "sections": [
+        {
+          "title": "Resource plots",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌵",
+              "title": "Desert Heart (Cactus)",
+              "badge": "Level 1–14",
+              "text": "Main resource for most buildings. Recommended: about 70% of your plots."
+            },
+            {
+              "icon": "💎",
+              "title": "Blue Crystal",
+              "badge": "Level 1–14",
+              "text": "Second resource, also needed for certain buildings. Recommended: about 30% of your plots."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Conquering plots",
+              "text": "Attack with troops, after winning it takes about 10 minutes to take control. The higher the plot level, the more virus resistance you need. Other players can steal your plots."
+            }
+          ],
+          "note": "You start with 10 plots and the number grows over time. High-level plots run out fast and are the most contested. Adjust the 70/30 split to what you need."
+        },
+        {
+          "title": "Season buildings: in this order",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧪",
+              "title": "Virus Institute",
+              "text": "The most important building: more virus resistance means access to high-level plots. Up to 4 institutes if your alliance has all three Alliance Centers."
+            },
+            {
+              "icon": "🏛️",
+              "title": "Land Management Office",
+              "text": "A higher level gives more space and more available plots."
+            },
+            {
+              "icon": "🏰",
+              "title": "Alliance Centers (×3)",
+              "text": "Required for the Glory War and dependent buildings. Any alliance member can build them."
+            },
+            {
+              "icon": "⚔️",
+              "title": "The rest",
+              "text": "Military Fortress (more attack), Defense Training Center and Strategic Barracks, in no fixed order."
+            }
+          ],
+          "note": "All buildings had a maximum level of 30. The higher the level, the more plot resources you need, so plan production early."
+        },
+        {
+          "title": "Specialization",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🤝",
+              "title": "Support",
+              "text": "Recommended for most. More Desert Heart and Crystal production, more alliance help and virus resistance. Below level 30 you are Support by default."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat",
+              "text": "Selectable from level 30, for players with high hero power. Includes Urgent Recruitment, Disguise, Quick Attack and Immediate Return."
+            }
+          ]
+        },
+        {
+          "title": "Glory War and ranking",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "⚔️",
+              "title": "Glory War",
+              "text": "The most important event. The winner can steal season points from the loser."
+            },
+            {
+              "icon": "🏙️",
+              "title": "Points",
+              "text": "Season points are the personal glory of all members plus city points. Held cities give passive points, points already collected aren't lost when you lose a city."
+            },
+            {
+              "icon": "🏆",
+              "title": "Reward tiers",
+              "text": "7 tiers, from Supreme Legion (rank 1) through Dawn Army (2–3), Glorious Pioneer (4–5), Protection Oath (6–10), Expeditionary Alliance (11–20) and Wasteland Legion (21–50) to Wasteland Guardian (51–999)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -36,7 +36,7 @@ async function initWeeklyPlan() {
     );
 
     const currentDay =
-      new Date().getDay();
+      getGameDay();
 
     selectedWeeklyTaskDay =
       currentDay >= 1 &&
@@ -85,7 +85,7 @@ function renderWeeklyPlanTabs() {
     return;
   }
 
-  const today = new Date().getDay();
+  const today = getGameDay();
 
   tabs.innerHTML =
     weeklyTaskEntries
@@ -236,7 +236,7 @@ function renderWeeklyPlanContent() {
                 <span class="callout-mark" aria-hidden="true">💡</span>
                 <div>
                   <strong>${isEnglish ? "Strategy tip" : "Strategie-Hinweis"}</strong>
-                  <p>${escapeWeeklyPlanHtml(entry.hint)}</p>
+                  <p>${applyTimeTokens(escapeWeeklyPlanHtml(entry.hint))}</p>
                 </div>
               </article>
             `

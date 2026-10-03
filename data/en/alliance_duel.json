@@ -34,7 +34,8 @@
         "name": "Defeat Succubi (Level 1–60)"
       }
     ],
-    "strategy": "Use Wrenches and Blueprints only at 08:00 or 20:00 Apo Time! Also defeat Zombies only at 08:00 or 20:00 Apo-Time! This way, you'll earn points for your Full Preparedness event at the same time."
+    "strategy": "Use Wrenches and Blueprints only at {{apo 08:00}} or {{apo 20:00}}! Also defeat Zombies only at {{apo 08:00}} or {{apo 20:00}}! This way, you'll earn points for your Full Preparedness event at the same time.",
+    "tip": "Open Sunday's Radar chests now: points only count when you open the chests."
   },
   {
     "day": 2,
@@ -67,7 +68,7 @@
         "name": "Recruit Survivors"
       }
     ],
-    "strategy": "Complete your building upgrades and use Construction Speedups only at 08:00 or 20:00 Apo Time! This way, you'll also earn points for your Full Preparedness event at the same time."
+    "strategy": "Complete your building upgrades and use Construction Speedups only at {{apo 08:00}} or {{apo 20:00}}! This way, you'll also earn points for your Full Preparedness event at the same time."
   },
   {
     "day": 3,
@@ -92,7 +93,7 @@
         "name": "Complete Orange Intercity Trade"
       }
     ],
-    "strategy": "Complete your research and use Research Speedups only at 08:00 or 20:00 Apo Time! This way, you'll also earn points for your Full Preparedness event at the same time."
+    "strategy": "Complete your research and use Research Speedups only at {{apo 08:00}} or {{apo 20:00}}! This way, you'll also earn points for your Full Preparedness event at the same time."
   },
   {
     "day": 4,
@@ -137,7 +138,7 @@
         "name": "Use Breakthrough Crystals"
       }
     ],
-    "strategy": "Today, only Advanced Recruitment counts for Alliance Duel and Full Preparedness. You don't have to worry about timing today. However, if you still want to do it, use Advanced Recruitment only at 08:00 or 20:00 Apo Time."
+    "strategy": "Today, only Advanced Recruitment counts for Alliance Duel and Full Preparedness. You don't have to worry about timing today. However, if you still want to do it, use Advanced Recruitment only at {{apo 08:00}} or {{apo 20:00}}."
   },
   {
     "day": 5,
@@ -166,7 +167,8 @@
         "name": "Train Soldiers (Level 1–10)"
       }
     ],
-    "strategy": "Today's point schedule: 04:00 – Use Construction Speedups and increase your Building Power. | 08:00 Apo Time – Train Troops. | 12:00 Apo Time – Use Research Speedups and increase your Research Power. | 20:00 Apo Time – Train Troops again. | This way, you'll earn points for both Alliance Duel and Full Preparedness every time."
+    "strategy": "Today's point schedule: {{apo 00:00}} – Use Construction Speedups and increase your Building Power. | {{apo 08:00}} – Train Troops. | {{apo 12:00}} – Use Research Speedups and increase your Research Power. | {{apo 20:00}} – Train Troops again. | This way, you'll earn points for both Alliance Duel and Full Preparedness every time.",
+    "tip": "Open Thursday's Radar chests now: points only count when you open the chests."
   },
   {
     "day": 6,
@@ -185,8 +187,13 @@
       {
         "icon": "goldtruck.webp",
         "name": "Complete Orange Intercity Trade"
+      },
+      {
+        "icon": "soldatenbesiegen.png",
+        "name": "Defeat Level 9 Soldiers (bonus points vs. enemy alliance)"
       }
     ],
-    "strategy": "Today, you can't combine Full Preparedness and Alliance Duel. Just complete your usual 3 chests throughout the day."
+    "strategy": "Today, you can't combine Full Preparedness and Alliance Duel. Just complete your usual 3 chests throughout the day.",
+    "tip": "Free server teleport to the opposing server, today only. The return trip lands randomly in your alliance hive, then a 20-second wait applies."
   }
 ]

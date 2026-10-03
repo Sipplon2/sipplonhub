@@ -1,0 +1,65 @@
+{
+  "title": "Kampf um die Invasion",
+  "subtitle": "Kriegswoche: Diese Punkte entscheiden, wer beim Serverkrieg angreift.",
+  "attackerTitle": "Gewinnt unser Server unter der Woche",
+  "attackerText": "Wir bekommen das Recht auf Invasion und greifen den Gegner-Server an.",
+  "defenderTitle": "Verliert unser Server unter der Woche",
+  "defenderText": "Der Gegner-Server bekommt das Recht auf Invasion und greift uns an.",
+  "groupsTitle": "Hier werden Punkte verglichen",
+  "groups": [
+    {
+      "name": "Allianz",
+      "tasks": [
+        {
+          "icon": "⚔️",
+          "name": "Sieg des Allianz-Duells"
+        },
+        {
+          "icon": "🥇",
+          "name": "Täglicher Rang 1 des Allianz-Duells"
+        },
+        {
+          "icon": "🛡️",
+          "name": "Rang 1 von Totale Bewaffnung"
+        }
+      ]
+    },
+    {
+      "name": "Arena",
+      "tasks": [
+        {
+          "icon": "🏟️",
+          "name": "Rang 1 der Arena"
+        }
+      ]
+    },
+    {
+      "name": "Trucks",
+      "tasks": [
+        {
+          "icon": "🚚",
+          "name": "1-mal einen Truck entsenden"
+        },
+        {
+          "icon": "💥",
+          "name": "Plündere erfolgreich 1 Truck der feindlichen Kriegszone"
+        }
+      ]
+    },
+    {
+      "name": "Kriegszone",
+      "tasks": [
+        {
+          "icon": "🎯",
+          "name": "Sieg im Kriegszonen-Gesamtschadenswettbewerb [Wütender Anführer]"
+        },
+        {
+          "icon": "🏅",
+          "name": "1. Platz im persönlichen Schaden von [Wütender Anführer]"
+        }
+      ],
+      "note": "Wütender Anführer: 4-mal täglich für je 3 Stunden ({{apo 00:00-03:00}}, {{apo 06:00-09:00}}, {{apo 12:00-15:00}}, {{apo 18:00-21:00}}), nicht sonntags. Es zählt dein höchster Einzelschaden des Tages."
+    }
+  ],
+  "infoTitle": "Zur Info: Was passiert nach der Woche?"
+}

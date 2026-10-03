@@ -109,6 +109,26 @@ function renderEvents() {
       ) >= now;
     });
 
+  /* Laufende Events zuerst (das mit dem frühesten Ende vorn), dann kommende. */
+  relevantEvents.sort((first, second) => {
+    const firstRunning = getEventStatus(first) === "running";
+    const secondRunning = getEventStatus(second) === "running";
+
+    if (firstRunning !== secondRunning) {
+      return firstRunning ? -1 : 1;
+    }
+
+    const firstTime = firstRunning
+      ? (parseEventDate(first.end)?.getTime() ?? Infinity)
+      : parseEventDate(first.start).getTime();
+
+    const secondTime = secondRunning
+      ? (parseEventDate(second.end)?.getTime() ?? Infinity)
+      : parseEventDate(second.start).getTime();
+
+    return firstTime - secondTime;
+  });
+
   const nextEvent =
     relevantEvents[0] ?? null;
 
@@ -126,18 +146,27 @@ function renderEvents() {
         : `${upcomingCount} bevorstehend`;
   }
 
+  /* Hero: bis zu 2 laufende Events + das nächste kommende (max. 3 Zeilen) */
+  const runningEvents = relevantEvents.filter(
+    (entry) => getEventStatus(entry) === "running"
+  );
+
+  const upcomingEvents = relevantEvents.filter(
+    (entry) => getEventStatus(entry) === "upcoming"
+  );
+
+  const heroRunning = runningEvents.slice(0, 2);
+  const heroUpcoming = upcomingEvents.slice(0, heroRunning.length === 0 ? 2 : 1);
+
   nextEventContainer.innerHTML =
     nextEvent
-      ? createNextEventCard(nextEvent)
+      ? createNextEventCard(nextEvent, heroRunning, heroUpcoming)
       : createNoUpcomingEvents();
 
-  listContainer.innerHTML =
-    relevantEvents.length > 0
-      ? relevantEvents
-          .slice(1)
-          .map(createEventListItem)
-          .join("")
-      : "";
+  /* Liste unten zeigt immer alle Events, auch die im Banner. */
+  listContainer.innerHTML = relevantEvents
+    .map(createEventListItem)
+    .join("");
 }
 
 function refreshEventOccurrences() {
@@ -147,48 +176,12 @@ function refreshEventOccurrences() {
     .sort(sortEvents);
 }
 
-function createNextEventCard(entry) {
-  const status =
-    getEventStatus(entry);
-
-  const eventLabel =
-    status === "running"
-      ? (
-          currentLanguage === "en"
-            ? "EVENT IS LIVE"
-            : "EVENT LÄUFT GERADE"
-        )
-      : (
-          currentLanguage === "en"
-            ? "NEXT EVENT"
-            : "NÄCHSTES EVENT"
-        );
-
-  const countdownLabel =
-    status === "running"
-      ? (
-          currentLanguage === "en"
-            ? "ENDING IN"
-            : "ENDET IN"
-        )
-      : (
-          currentLanguage === "en"
-            ? "STARTING IN"
-            : "STARTET IN"
-        );
-
-  const loadingText =
-    currentLanguage === "en"
-      ? "Calculating …"
-      : "Wird berechnet …";
-
+function createNextEventCard(entry, runningEvents = [], upcomingEvents = []) {
+  const status = getEventStatus(entry);
   const isEnglish = currentLanguage === "en";
-  const todayNumber = new Date().getDay();
+  const todayNumber = getGameDay();
 
-  const todayName = new Intl.DateTimeFormat(
-    isEnglish ? "en-US" : "de-DE",
-    { weekday: "long" }
-  ).format(new Date());
+  const todayName = getGameWeekdayName();
 
   const todayDuel =
     typeof allianceDuelEntries !== "undefined"
@@ -200,6 +193,28 @@ function createNextEventCard(entry) {
   const todayTitle =
     todayDuel?.title ??
     (isEnglish ? "No duel today" : "Heute kein Duell-Tag");
+
+  const groups = [];
+
+  if (runningEvents.length > 0) {
+    groups.push(
+      createHeroGroup(
+        isEnglish ? "RUNNING NOW" : "LÄUFT JETZT",
+        "running",
+        runningEvents
+      )
+    );
+  }
+
+  if (upcomingEvents.length > 0) {
+    groups.push(
+      createHeroGroup(
+        isEnglish ? "UP NEXT" : "ALS NÄCHSTES",
+        "upcoming",
+        upcomingEvents
+      )
+    );
+  }
 
   return `
     <article class="next-event-card ${status}">
@@ -213,6 +228,14 @@ function createNextEventCard(entry) {
         <h1>${escapeEventHtml(todayTitle)}</h1>
 
         ${
+          typeof isInvasionWeek === "function" && isInvasionWeek()
+            ? `<a class="war-badge" href="#invasion">
+                ⚔️ ${isEnglish ? "War week · battle for the invasion" : "Kriegswoche · Kampf um die Invasion"}
+              </a>`
+            : ""
+        }
+
+        ${
           todayDuel
             ? `<a class="hero-button" href="#alliance">
                 ${isEnglish ? "To today's plan" : "Zum Tagesplan"} →
@@ -222,23 +245,56 @@ function createNextEventCard(entry) {
       </div>
 
       <div class="hero-event">
-        <p class="next-event-label">${eventLabel}</p>
-        <h3>${escapeEventHtml(entry.title)}</h3>
-
-        <div class="next-event-countdown">
-          <small>${countdownLabel}</small>
-          <strong
-            data-event-countdown
-            data-event-start="${escapeEventHtml(entry.start)}"
-            data-event-end="${escapeEventHtml(entry.end ?? "")}"
-          >
-            ${loadingText}
-          </strong>
-        </div>
-
-        <span class="next-event-date">${formatEventDate(entry.start)}</span>
+        ${groups.join("")}
       </div>
     </article>
+  `;
+}
+
+function createHeroGroup(label, kind, entries) {
+  const loadingText =
+    currentLanguage === "en" ? "…" : "…";
+
+  return `
+    <div class="hero-group ${kind}">
+      <p class="next-event-label">${label}</p>
+
+      ${entries
+        .map((entry) => {
+          const isRunning = kind === "running";
+          const crop = Number(entry.backgroundCrop) || 0;
+
+          return `
+            <div class="hero-row ${kind}">
+              <span
+                class="hero-row-thumb"
+                style="background-image: url('${escapeEventHtml(entry.background ?? "")}'); background-position: center ${crop > 0 ? "85%" : "center"};"
+              ></span>
+
+              <div class="hero-row-info">
+                <strong>${escapeEventHtml(entry.title)}</strong>
+                <small>
+                  ${
+                    isRunning
+                      ? (currentLanguage === "en" ? "ending in" : "endet in")
+                      : formatEventDate(entry.start)
+                  }
+                </small>
+              </div>
+
+              <strong
+                class="hero-row-countdown"
+                data-event-countdown
+                data-event-start="${escapeEventHtml(entry.start)}"
+                data-event-end="${escapeEventHtml(entry.end ?? "")}"
+              >
+                ${loadingText}
+              </strong>
+            </div>
+          `;
+        })
+        .join("")}
+    </div>
   `;
 }
 
@@ -256,6 +312,24 @@ function createEventBackground(entry) {
   `;
 }
 
+function createEventGuide(entry) {
+  if (!Array.isArray(entry.guide) || entry.guide.length === 0) {
+    return "";
+  }
+
+  return `
+    <details class="event-guide" data-guide-id="${escapeEventHtml(entry.id ?? "")}">
+      <summary>${currentLanguage === "en" ? "Quick guide" : "Kurzguide"}</summary>
+
+      <ul>
+        ${entry.guide
+          .map((line) => `<li>${applyTimeTokens(escapeEventHtml(line))}</li>`)
+          .join("")}
+      </ul>
+    </details>
+  `;
+}
+
 function createEventListItem(entry) {
   const status =
     getEventStatus(entry);
@@ -270,6 +344,8 @@ function createEventListItem(entry) {
       </div>
 
       <p>${escapeEventHtml(entry.description ?? "")}</p>
+
+      ${createEventGuide(entry)}
 
       <div class="event-list-foot">
         <small>${formatEventDate(entry.start)}</small>
@@ -323,7 +399,7 @@ function updateEventCountdowns() {
     }
 
     const eventCard = element.closest(
-      ".next-event-card, .event-list-item"
+      ".hero-row, .next-event-card, .event-list-item"
     );
 
     const isCurrentlyDisplayedAsRunning =
@@ -475,26 +551,33 @@ function parseEventDate(value) {
 }
 
 function formatEventDate(value) {
-  const date =
-    parseEventDate(value);
+  const date = parseEventDate(value);
 
   if (!date) {
     return "—";
   }
 
-  return new Intl.DateTimeFormat(
-    currentLanguage === "en"
-    ? "en-US"
-    : "de-DE",
+  const formatted = new Intl.DateTimeFormat(
+    currentLanguage === "en" ? "en-US" : "de-DE",
     {
+      timeZone: getDisplayTimeZone(),
       weekday: "long",
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
+      hourCycle: "h23",
     }
   ).format(date);
+
+  if (timeMode !== "apo") {
+    return formatted;
+  }
+
+  return currentLanguage === "en"
+    ? `${formatted} Apo Time`
+    : `${formatted} Apo-Time`;
 }
 
 function createNoUpcomingEvents() {
@@ -538,6 +621,60 @@ function getNextOccurrence(entry) {
     return {
       ...entry
     };
+  }
+
+  /*
+   * Zyklus-Events (z. B. Serverkrieg): wiederholt sich alle repeatDays,
+   * aber nur in den ersten activeDays eines cycleDays-Zyklus.
+   * Kalendertage statt Millisekunden, damit die Uhrzeit bei
+   * Sommer-/Winterzeit-Wechsel stabil bleibt.
+   */
+  const cycleDays = Number(entry.cycleDays);
+  const activeDays = Number(entry.activeDays);
+
+  if (
+    Number.isFinite(cycleDays) &&
+    Number.isFinite(activeDays) &&
+    cycleDays > 0
+  ) {
+    const cycleDuration =
+      originalEnd
+        ? Math.max(
+            0,
+            originalEnd.getTime() -
+              originalStart.getTime()
+          )
+        : 0;
+
+    for (let step = 0; step < 400; step += 1) {
+      const offsetDays = step * repeatDays;
+
+      if (offsetDays % cycleDays >= activeDays) {
+        continue;
+      }
+
+      const occurrenceStart = new Date(originalStart);
+
+      occurrenceStart.setDate(
+        originalStart.getDate() + offsetDays
+      );
+
+      const occurrenceEnd = new Date(
+        occurrenceStart.getTime() + cycleDuration
+      );
+
+      if (occurrenceEnd.getTime() > Date.now()) {
+        return {
+          ...entry,
+          start: formatLocalEventDate(occurrenceStart),
+          end: originalEnd
+            ? formatLocalEventDate(occurrenceEnd)
+            : null
+        };
+      }
+    }
+
+    return null;
   }
 
   const repeatMilliseconds =

@@ -40,10 +40,6 @@
     gap: 12px;
   }
 
-  .topnav {
-    display: none;
-  }
-
   .topbar-tools {
     margin-left: auto;
   }
@@ -108,5 +104,173 @@
 
   .tool-button:not(.tool-button-discord) {
     display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .time-clock {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .invasion-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .invasion-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    display: none;
+  }
+
+  .topbar-tools {
+    gap: 6px;
+  }
+
+  .time-button {
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-event {
+    padding: 12px;
+  }
+
+  .hero-row {
+    gap: 10px;
+    padding: 8px 10px 8px 8px;
+  }
+
+  .hero-row-thumb {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-row-info strong {
+    font-size: 0.95rem;
+  }
+
+  .hero-row-countdown {
+    font-size: 1rem;
+  }
+
+  .hero-row.upcoming .hero-row-countdown {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .codes-body {
+    padding: 16px;
+  }
+}
+
+/* Handy: Reiter als feste Leiste unten, wie bei einer App */
+@media (max-width: 700px) {
+  .topnav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+
+    gap: 0;
+    margin: 0;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+
+    background: rgba(10, 13, 16, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .topnav a {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    padding: 6px 4px;
+
+    font-size: 0.72rem;
+    border-radius: 12px;
+  }
+
+  .topnav a::before {
+    content: attr(data-icon);
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Der Weichzeichner der Kopfleiste würde die feste Leiste unten an die Kopfleiste binden */
+@media (max-width: 700px) {
+  .topbar {
+    background: rgba(10, 13, 16, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .topnav {
+    border-radius: 0;
+    border-width: 1px 0 0;
+  }
+
+  .topnav a {
+    justify-content: center;
+    padding: 6px 4px;
+  }
+
+  .topnav a.active {
+    color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .sg-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sg-intro {
+    padding: 16px;
+  }
+
+  .topnav a {
+    font-size: 0.68rem;
+    padding: 6px 2px;
+  }
+}
+
+@media (max-width: 900px) {
+  .rose-strip {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: -36px;
+    padding: 18px 20px;
+  }
+
+  .rose-side {
+    padding-top: 16px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .rose-number {
+    font-size: 3.2rem;
   }
 }

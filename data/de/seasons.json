@@ -1,0 +1,566 @@
+{
+  "title": "Saisons",
+  "subtitle": "Guides zu allen Saisons. Season 2 bis 5 sind beendet.",
+  "upcoming": {
+    "id": "s6",
+    "tab": "S6",
+    "name": "Noch unbekannt",
+    "meta": "Wir warten auf den Start",
+    "soonLabel": "Coming Soon"
+  },
+  "endedLabel": "Beendet",
+  "endedText": "Diese Saison ist beendet. Der Guide bleibt als Nachschlagewerk stehen.",
+  "seasons": [
+    {
+      "id": "s5",
+      "tab": "S5",
+      "name": "Moonlit Elegy",
+      "theme": "🌙",
+      "cover": "assets/images/seasons/s5.webp",
+      "meta": "Vampire · 71 Tage",
+      "intro": "Vampir-Saison mit Werwölfen und Sukkubus. Das Prinzip bleibt wie in früheren Seasons: Saison-Gebäude ausbauen, Monster besiegen und im Ruhmkrieg Punkte sammeln.",
+      "sections": [
+        {
+          "title": "Monster",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🐺",
+              "title": "Werwolf",
+              "badge": "8 Treibstoff",
+              "text": "Leichter zu besiegen, ideal, solange das Serum-Labor noch niedrig ist. Gibt Schatten-Blutkristalle. Der erste Sieg am Tag gibt einen Dämonenstein."
+            },
+            {
+              "icon": "😈",
+              "title": "Sukkubus / Knight Scubus",
+              "badge": "16 Treibstoff",
+              "text": "Schwerer und braucht hohe Virus-Resistenz (Serum-Labor). Gibt mehr Blutkristalle und beim ersten Sieg ebenfalls einen Dämonenstein."
+            },
+            {
+              "icon": "🐕",
+              "title": "Wütender Anführer: Serverus",
+              "text": "Der neue Boss der Saison, ein Höllenhund im Vampir-Stil. Er erscheint wie in früheren Seasons auf der Karte und kann Basen angreifen."
+            }
+          ],
+          "note": "Das Tageslimit für Monster war zum Start nicht bestätigt. Früher waren es 30 in der ersten Woche und danach 15."
+        },
+        {
+          "title": "Saison-Gebäude: diese Reihenfolge",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧪",
+              "title": "Serum-Labor",
+              "text": "Gibt Virus-Resistenz. Ohne sie kommst du nicht an hohe Monster und damit nicht an mehr Blutkristalle. Der größte Engpass der Saison, ständig ausbauen."
+            },
+            {
+              "icon": "💧",
+              "title": "Schattenquelle",
+              "text": "Fördert Heiliges Wasser, eine der beiden Ressourcen für Gebäude-Upgrades."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Kampfgebäude",
+              "text": "Kommandozentrale (mehr Schaden), Feuerleitzentrale (mehr Angriff) und Verteidigungsfestung (mehr Verteidigung). Danach ausbauen."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Der Rest",
+              "text": "Nach den ersten drei nach Ressourcen ausbauen."
+            }
+          ],
+          "note": "Wie in früheren Seasons gab es am Ende persönliche Belohnungen nach den gesammelten Saison-Ressourcen."
+        },
+        {
+          "title": "Saison-Ressourcen",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "💧",
+              "title": "Heiliges Wasser",
+              "text": "Kommt passiv aus der Schattenquelle und wird für alle Saison-Gebäude gebraucht."
+            },
+            {
+              "icon": "🩸",
+              "title": "Schatten-Blutkristall",
+              "text": "Kommt vom Besiegen von Werwölfen und Sukkubus. Mit Heiligem Wasser zusammen für Upgrades nötig."
+            },
+            {
+              "icon": "🪨",
+              "title": "Dämonenstein",
+              "text": "Goldene Truhe beim ersten Sieg über ein Monster. Wird an die Geheimnisvolle Hexe geliefert."
+            },
+            {
+              "icon": "🌙",
+              "title": "Mondmünze",
+              "text": "Entsteht, wenn du eine Mondlicht-Karte doppelt bekommst. Währung für den Nachtmarkt."
+            }
+          ]
+        },
+        {
+          "title": "Nightfall",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "⏰",
+              "title": "Zeiten",
+              "text": "Täglich um {{apo 08:00}} und {{apo 16:00}}."
+            },
+            {
+              "icon": "📈",
+              "title": "Dauer",
+              "text": "In Woche 1 eine Stunde, jede Woche eine Stunde länger. In Woche 8 beginnt die ewige Nacht."
+            },
+            {
+              "icon": "🏆",
+              "title": "Ranking",
+              "text": "Wöchentlich nach dem höchsten besiegten Knight Scubus. Es zählt nur, wer die Rally startet und den Kill macht, nicht die Teilnehmer."
+            },
+            {
+              "icon": "✅",
+              "title": "Belohnungen",
+              "text": "Für alle Belohnungen musst du 80 Rallys starten oder ihnen beitreten."
+            }
+          ]
+        },
+        {
+          "title": "Geheimnisvolle Hexe und Mondlicht-Karten",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "3",
+              "title": "Stufe 3: Mondlicht-Beobachter",
+              "text": "Du kannst Mondbeobachter gegen Mondlicht-Karten tauschen."
+            },
+            {
+              "icon": "10",
+              "title": "Stufe 10: Mondlicht-Segen",
+              "text": "Du kannst Karten an deine Truppen ausrüsten."
+            },
+            {
+              "icon": "21",
+              "title": "Stufe 21: Mehr Plätze",
+              "text": "Weitere Plätze für gleichzeitig ausgerüstete Karten."
+            },
+            {
+              "icon": "33",
+              "title": "Stufe 33: 12 aktive Karten",
+              "text": "Alle 12 Plätze sind frei, die Buffs wirken zu 100 %."
+            }
+          ],
+          "note": "Es gibt 52 Karten mit Buffs auf Verteidigung, Angriff, Leben und Schaden (Gelb am stärksten, dann Lila, dann Blau). Die Effekte galten nur in dieser Saison."
+        },
+        {
+          "title": "Events der Saison",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌙",
+              "title": "Nightfall",
+              "badge": "ab Tag 1",
+              "text": "Das wichtigste Kampf-Event der Saison, siehe oben."
+            },
+            {
+              "icon": "🔮",
+              "title": "Geheimnisvolle Hexe",
+              "badge": "ab Tag 1",
+              "text": "Dämonensteine abgeben. Die Ruhmtruhe gab es alle 8 Stunden mit Abzeichen und Z-Währung."
+            },
+            {
+              "icon": "🏹",
+              "title": "Dämonenjäger-Auftrag",
+              "badge": "mit dem Reset",
+              "text": "Besondere Jagdaufträge für Belohnungen."
+            },
+            {
+              "icon": "🌅",
+              "title": "Haus der Morgenröte",
+              "badge": "sonntags",
+              "text": "Öffnete jeden Sonntag."
+            },
+            {
+              "icon": "🏪",
+              "title": "Handelsstationen und Nachtmarkt",
+              "badge": "ab Tag 11",
+              "text": "Der Nachtmarkt nahm Mondmünzen aus doppelten Karten an."
+            },
+            {
+              "icon": "🛒",
+              "title": "Camilas Shop",
+              "badge": "ab Tag 1",
+              "text": "Truhen-Event mit roten Fragmenten."
+            }
+          ]
+        },
+        {
+          "title": "Erwachen und Meisterschaft",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌟",
+              "title": "Erwachen: Oliveira, Scarlett, Evely",
+              "text": "Statt Rekrutierungstickets gab es als Ranglisten-Preise S5-Erwachensabzeichen. Sie galten universell. Für das Erwachen brauchte man 5 Sterne."
+            },
+            {
+              "icon": "🎓",
+              "title": "Meisterschaft bis Stufe 90",
+              "text": "Das Limit stieg von 70 auf 90. Support war für die meisten die beste Wahl (kürzere Forschung, höheres VIP-Limit). Combat lohnte sich ab Stufe 30 für aktive PvP-Spieler."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "tab": "S4",
+      "name": "Dinosaur Origin",
+      "theme": "🦕",
+      "cover": "assets/images/seasons/s4.webp",
+      "meta": "Dschungel · 91 Tage",
+      "intro": "Die längste und komplexeste Saison bisher: 13 Wochen Dschungel-Karte mit Dinosauriern statt Zombies, vielen Events und neuen Systemen.",
+      "sections": [
+        {
+          "title": "Wichtig vorab",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "💎",
+              "title": "Diamanten sparen",
+              "text": "Season 4 war weniger Free-to-play-freundlich als Season 3, vor allem wegen der Handelszentren, die Diamanten kosten. Vorher Diamanten zu sparen war empfohlen."
+            },
+            {
+              "icon": "🦸",
+              "title": "Drei neue Helden",
+              "text": "Yu Chan (Blood Rose), Queenie (Wings of Dawn) und Amber (Guard of Order), jeweils mit eigenem Pass und exklusiver Waffe. Wer einen Pass verpasste, konnte die Helden nach etwa 6 Wochen über Fragmente nachholen."
+            },
+            {
+              "icon": "🔄",
+              "title": "Helden-Stufentausch",
+              "text": "Du konntest Helden- und Skill-Stufen dauerhaft zwischen zwei Helden tauschen und so alle Investitionen auf einen neuen S4-Helden übertragen."
+            }
+          ]
+        },
+        {
+          "title": "Saison-Gebäude: diese Reihenfolge",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧬",
+              "title": "Biotech-Labor",
+              "text": "Gibt Virus-Resistenz und bestimmt, welche Dinosaurier du angreifen kannst. Sobald du Level-60-Dinos besiegst, ist weiterer Ausbau nicht mehr nötig."
+            },
+            {
+              "icon": "🌿",
+              "title": "Bio-Gewächshaus",
+              "text": "Produziert Farnblätter, die Hauptressource. Alle 4 von Anfang an bauen, das 5. gab es über die Kriegszeit-Investition."
+            },
+            {
+              "icon": "🏯",
+              "title": "Allianzzentren (×3)",
+              "text": "Nötig für den Ruhmkrieg. So früh wie möglich bauen."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Kampfgebäude (ab Stufe 60)",
+              "text": "Kommandozentrale (Schaden), Arsenal ×2 (Angriff), Befestigung ×2 (Verteidigung). Nicht zu früh ausbauen, Virus-Resistenz kommt zuerst."
+            }
+          ]
+        },
+        {
+          "title": "Ressourcen und NPCs",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌿",
+              "title": "Farnblätter",
+              "text": "Kommen aus den Bio-Gewächshäusern, Hauptressource für alle Saison-Gebäude."
+            },
+            {
+              "icon": "⚖️",
+              "title": "Kreideschuppen",
+              "text": "Kommen vom Besiegen von NPCs auf der Karte. Zweite wichtige Ressource für Gebäude."
+            },
+            {
+              "icon": "🦖",
+              "title": "Velociraptoren",
+              "badge": "15 Belohnungen/Tag",
+              "text": "Priorität 1. Hauptquelle jeden Tag: Kreideschuppen und Ruhm. Immer das höchste Level angreifen, das du schaffst."
+            },
+            {
+              "icon": "🦕",
+              "title": "Stegosaurier",
+              "badge": "15 Belohnungen/Tag",
+              "text": "Priorität 2. Gibt Urzeit-Dino-Eier und Kreideschuppen. Teilt sich das Tageslimit mit den Velociraptoren."
+            },
+            {
+              "icon": "🦅",
+              "title": "Raubtier-Trupps",
+              "badge": "2 Kills/Tag, sonntags 5",
+              "text": "Bis Stufe 200 auf der Karte. Gibt Saison-Ressourcen, Eier, Baupläne und Helden-EXP."
+            }
+          ],
+          "note": "Ruhmtruhe alle 8 Stunden: ohne Season Journey bis zu 148 Abzeichen, mit Pass doppelt. Wer allein keine hohen Dinos schafft, kann Rallys stärkerer Spieler beitreten und bekommt trotzdem Ruhm."
+        },
+        {
+          "title": "Events der Saison",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🦖",
+              "title": "Ancient Dino",
+              "badge": "sonntags {{apo 12:00}}",
+              "text": "Jeden Sonntag. Alle greifen einen riesigen Dinosaurier ohne Angriffslimit an. Die Top 3 beim ersten Kill bekommen einen Titel. Das Event dauert nur Minuten."
+            },
+            {
+              "icon": "🥚",
+              "title": "Dino-Rettung und Schwarzmarkt-Wächter",
+              "badge": "sonntags",
+              "text": "Der Wächter (bis Stufe 350) braucht eine Rally. Staatsweite Erfolge geben allen Spielern Belohnungen."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Dino-Ei-Verteidigung",
+              "text": "Ähnlich der Zombie-Belagerung. Wichtiger als das Ranking ist die Fertigstellung, die bis zu 14 Goldene Schraubenschlüssel gibt."
+            },
+            {
+              "icon": "🏪",
+              "title": "Handelszentren",
+              "badge": "Mo/Mi/Fr {{apo 11:00}}",
+              "text": "Drei Stufen, erst nur im eigenen Staat, später staatenübergreifend. Alle Käufe kosten Diamanten."
+            },
+            {
+              "icon": "📖",
+              "title": "Fossilienalbum",
+              "text": "20 verschiedene Fossilien aus dem Ancient-Dino-Event sammeln. Doppelte werden zu Urzeit-Dino-Eiern."
+            },
+            {
+              "icon": "🏬",
+              "title": "Bio-Institut-Shop",
+              "badge": "Sa/So",
+              "text": "Öffnet nur samstags und sonntags, Einkauf mit Urzeit-Dino-Eiern, 14 Aktualisierungen pro Wochenende."
+            }
+          ]
+        },
+        {
+          "title": "Schlupf der Legenden und Ruhmkrieg",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🥚",
+              "title": "Schlupf der Legenden",
+              "text": "Du ziehst einen Dinosaurier bis Stufe 30 auf (T-Rex, Triceratops oder Ankylosaurus, nur eine Art pro Saison). Jede Stufe gibt +1 % Truppenangriff, maximal +30 %. Ab Stufe 16 gibt es einen Fahrzeug-Skin. Gefüttert wird mit Dino-Futter und Tannenzapfen."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Ruhmkrieg",
+              "badge": "dienstags",
+              "text": "Dein Staat wurde mit 3 anderen Staaten gruppiert. Die Kriege liefen jeden Dienstag. Höhere Platzierungen gaben bessere Belohnungen, auch S4-Rekrutierungstickets."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "tab": "S3",
+      "name": "Snow Monsters",
+      "theme": "❄️",
+      "cover": "assets/images/seasons/s3.webp",
+      "meta": "Schnee · 70 Tage",
+      "intro": "Ähnlicher Aufbau wie Season 2, aber mit Fokus auf Raids gegen Schnee-Bosse. Die Karte wird zur gefrorenen Einöde.",
+      "sections": [
+        {
+          "title": "Saison-Gebäude: diese Reihenfolge",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧬",
+              "title": "Biologisches Labor",
+              "text": "Gibt Virus-Resistenz, damit du höhere Boomers angreifen kannst. Boomers geben Eiskerne, die für alle Gebäude nötig sind. Das wichtigste Gebäude."
+            },
+            {
+              "icon": "🌸",
+              "title": "Temperatur-Kontrollzentrum",
+              "text": "Produziert Lotusblüten, die Hauptressource für Upgrades. Ausbauen, sobald genug Eiskerne da sind."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Kampfgebäude",
+              "text": "Glazial-Militärdepot (Angriff), Gletscherfestung (Verteidigung) und Militärkommando (Schaden). Erst, wenn Labor und Kontrollzentrum gut stehen."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Der Rest",
+              "text": "Nach Ressourcen ausbauen."
+            }
+          ],
+          "note": "Persönliche Belohnungen am Ende richteten sich nach den gespeicherten Saison-Ressourcen."
+        },
+        {
+          "title": "Raids: 15 Belohnungen pro Tag",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "❄️",
+              "title": "Boomers (Schnee-Zombies)",
+              "text": "Priorität 1. Geben doppelt so viele Eiskerne wie der Leopard. Nach dem Server-Reset zuerst 15 davon angreifen."
+            },
+            {
+              "icon": "🐆",
+              "title": "Schneeleopard",
+              "text": "Mittlere Priorität. Nur den ersten Sieg mitnehmen, wenn die 15 Boomer-Belohnungen schon aufgebraucht sind."
+            },
+            {
+              "icon": "🦍",
+              "title": "Yeti (Wandernder Boss)",
+              "text": "Fortgeschritten, Level 100 bis 350. Nur 2 Belohnungen pro Tag, und nur bei Teilnahme am letzten Raid. Viele Truppen landen im Hospital, nur mit starker Allianz."
+            }
+          ],
+          "note": "Yeti-Tipp: Nähert sich der Yeti deiner Basis, starte einen Raid und brich ihn sofort ab. Dann nimmt er einen anderen Weg und du vermeidest Schaden."
+        },
+        {
+          "title": "Events der Saison",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌨️",
+              "title": "Schneesturm-Rettung",
+              "badge": "Tag 1–3",
+              "text": "Tag 1 bis 3 von Allianz gegen Allianz. Es gibt 10 Belohnungen pro Tag. Nur große Eisskulpturen suchen und die Position im Allianz-Chat teilen."
+            },
+            {
+              "icon": "🦣",
+              "title": "Mammut-Skulptur",
+              "text": "Gibt 2 Fragmente für eine exklusive Saisonwaffe."
+            },
+            {
+              "icon": "🦌",
+              "title": "Hirsch-Skulptur",
+              "text": "Gibt 300 Abzeichen."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Ruhmkrieg",
+              "text": "Das wichtigste Event. Der Sieger kann Saisonpunkte des Verlierers stehlen. Das bestimmt die Endplatzierung."
+            }
+          ]
+        },
+        {
+          "title": "Spezialisierung",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🤝",
+              "title": "Support",
+              "text": "Empfohlen für alle. Unter Stufe 30 ist man automatisch Support. Enthält Freundschaftsschild, Schatzmeister, gemeinsames Bauen und Forschen."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat",
+              "text": "Ab Stufe 30 wählbar, sinnvoll für Spieler mit über 48 Mio. Heldenkraft. Enthält Notrekrutierung (150 Soldaten täglich), Tarnung, Schnellangriff und Sofortrückkehr."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "tab": "S2",
+      "name": "Desert Guardian",
+      "theme": "🏜️",
+      "cover": "assets/images/seasons/s2.webp",
+      "meta": "Wüste · ca. 80 Tage",
+      "intro": "Wüsten-Saison, in der es nicht um Bosse, sondern um Ressourcen-Felder auf der Karte geht. Die Wüstenkarte umfasst die Zonen 1 bis 320 (ab Zone 321 war die Saison eisig).",
+      "sections": [
+        {
+          "title": "Ressourcen-Felder",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🌵",
+              "title": "Wüstenherz (Kaktus)",
+              "badge": "Stufe 1–14",
+              "text": "Hauptressource für die meisten Gebäude. Empfohlen: etwa 70 % deiner Felder."
+            },
+            {
+              "icon": "💎",
+              "title": "Blaukristall",
+              "badge": "Stufe 1–14",
+              "text": "Zweite Ressource, ebenfalls für bestimmte Gebäude nötig. Empfohlen: etwa 30 % deiner Felder."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Felder erobern",
+              "text": "Mit Truppen angreifen, nach dem Sieg dauert es etwa 10 Minuten bis zur Kontrolle. Je höher die Stufe, desto mehr Virus-Resistenz brauchst du. Andere Spieler können deine Felder stehlen."
+            }
+          ],
+          "note": "Du startest mit 10 Feldern, die Zahl wächst mit der Zeit. Hochstufige Felder sind schnell weg und am umkämpftesten. Die 70/30-Verteilung je nach Bedarf anpassen."
+        },
+        {
+          "title": "Saison-Gebäude: diese Reihenfolge",
+          "type": "steps",
+          "items": [
+            {
+              "icon": "🧪",
+              "title": "Virus-Institut",
+              "text": "Das wichtigste Gebäude: Mehr Virus-Resistenz bedeutet Zugang zu hochstufigen Feldern. Bis zu 4 Institute, wenn deine Allianz alle drei Allianzzentren hat."
+            },
+            {
+              "icon": "🏛️",
+              "title": "Landverwaltungsamt",
+              "text": "Höhere Stufe gibt mehr Platz und mehr verfügbare Felder."
+            },
+            {
+              "icon": "🏰",
+              "title": "Allianzzentren (×3)",
+              "text": "Nötig für den Ruhmkrieg und abhängige Gebäude. Jedes Allianzmitglied kann sie bauen."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Der Rest",
+              "text": "Militärfestung (mehr Angriff), Verteidigungs-Trainingszentrum und Strategische Kaserne, ohne feste Reihenfolge."
+            }
+          ],
+          "note": "Alle Gebäude hatten maximal Stufe 30. Je höher die Stufe, desto mehr Felder-Ressourcen brauchst du, also die Produktion früh planen."
+        },
+        {
+          "title": "Spezialisierung",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "🤝",
+              "title": "Support",
+              "text": "Empfohlen für die meisten. Mehr Wüstenherz- und Kristallproduktion, mehr Allianzhilfe und Virus-Resistenz. Unter Stufe 30 ist man automatisch Support."
+            },
+            {
+              "icon": "⚔️",
+              "title": "Combat",
+              "text": "Ab Stufe 30 wählbar, für Spieler mit hoher Heldenkraft. Enthält dringende Rekrutierung, Tarnung, Schnellangriff und Sofortrückkehr."
+            }
+          ]
+        },
+        {
+          "title": "Ruhmkrieg und Ranking",
+          "type": "cards",
+          "items": [
+            {
+              "icon": "⚔️",
+              "title": "Ruhmkrieg",
+              "text": "Das wichtigste Event. Der Sieger kann Saisonpunkte des Verlierers stehlen."
+            },
+            {
+              "icon": "🏙️",
+              "title": "Punkte",
+              "text": "Saisonpunkte sind persönlicher Ruhm aller Mitglieder plus Stadtpunkte. Besetzte Städte geben passiv Punkte, bereits gesammelte gehen beim Verlust nicht verloren."
+            },
+            {
+              "icon": "🏆",
+              "title": "Belohnungsstufen",
+              "text": "7 Stufen, von Supreme Legion (Platz 1) über Dawn Army (2–3), Glorious Pioneer (4–5), Protection Oath (6–10), Expeditionary Alliance (11–20) und Wasteland Legion (21–50) bis Wasteland Guardian (51–999)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
