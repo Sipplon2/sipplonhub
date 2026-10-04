@@ -60,15 +60,18 @@ async function initWeeklyPlan() {
     if (container) {
       container.innerHTML = `
         <p class="panel-eyebrow">
-          Fehler
+          ${currentLanguage === "en" ? "Error" : "Fehler"}
         </p>
 
         <h3>
-          Saison-Aufgaben konnten nicht geladen werden
+          ${currentLanguage === "en"
+            ? "Season missions could not be loaded"
+            : "Saison-Aufgaben konnten nicht geladen werden"}
         </h3>
 
         <p class="panel-subtitle">
-          Prüfe data/de/weekly_tasks.json.
+          ${currentLanguage === "en" ? "Check" : "Prüfe"}
+          data/${currentLanguage}/weekly_tasks.json.
         </p>
       `;
     }

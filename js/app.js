@@ -17,6 +17,15 @@ const staticTexts = {
     timeApoTitle: "Weltuntergangszeit (Spielzeit) anzeigen",
     comingSoon: "Coming Soon",
     comingSoonText: "Die Saison-Aufgaben erscheinen, sobald die Saison startet.",
+    brandLabel: "Zur Startseite",
+    navLabel: "Bereiche",
+    timeLabel: "Zeitanzeige",
+    allianceTabsLabel: "Allianz-Duell nach Wochentag",
+    loading: "Wird geladen …",
+    footerBy: "Erstellt von",
+    footerNote: "Inoffizieller Community-Hub für Last Z.",
+    metaDescription:
+      "Sipplon's Last Z Hub – Allianz-Duell, Events, Saison-Guides und Geschenkcodes.",
     introEyebrow: "Heute",
     introSub: "Inoffizieller Community-Hub für Last Z.",
     navToday: "Heute",
@@ -40,6 +49,15 @@ const staticTexts = {
     timeApoTitle: "Show Apocalypse time (in-game time)",
     comingSoon: "Coming Soon",
     comingSoonText: "Season missions will appear as soon as the season starts.",
+    brandLabel: "Back to start",
+    navLabel: "Sections",
+    timeLabel: "Time display",
+    allianceTabsLabel: "Alliance Duel by weekday",
+    loading: "Loading …",
+    footerBy: "Created by",
+    footerNote: "Unofficial community hub for Last Z.",
+    metaDescription:
+      "Sipplon's Last Z Hub – Alliance Duel, events, season guides and gift codes.",
     introEyebrow: "Today",
     introSub: "Unofficial community hub for Last Z.",
     navToday: "Today",
@@ -146,6 +164,27 @@ function updateStaticTexts() {
   setTextContent("#nav-codes", texts.navCodes);
 
   setTextContent("#intro-sub", texts.introSub);
+
+  /* Alle markierten Texte und Beschriftungen übersetzen */
+  for (const element of document.querySelectorAll("[data-i18n]")) {
+    const text = texts[element.dataset.i18n];
+
+    if (text) {
+      element.textContent = text;
+    }
+  }
+
+  for (const element of document.querySelectorAll("[data-i18n-aria]")) {
+    const text = texts[element.dataset.i18nAria];
+
+    if (text) {
+      element.setAttribute("aria-label", text);
+    }
+  }
+
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute("content", texts.metaDescription);
 
   document.documentElement.lang =
     currentLanguage;

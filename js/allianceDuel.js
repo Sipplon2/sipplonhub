@@ -63,15 +63,18 @@ async function initAllianceDuel() {
 
     contentContainer.innerHTML = `
       <p class="panel-eyebrow">
-        Fehler
+        ${currentLanguage === "en" ? "Error" : "Fehler"}
       </p>
 
       <h3>
-        Allianz-Duell konnte nicht geladen werden
+        ${currentLanguage === "en"
+          ? "Alliance Duel could not be loaded"
+          : "Allianz-Duell konnte nicht geladen werden"}
       </h3>
 
       <p class="panel-subtitle">
-        Prüfe data/de/alliance_duel.json.
+        ${currentLanguage === "en" ? "Check" : "Prüfe"}
+        data/${currentLanguage}/alliance_duel.json.
       </p>
     `;
   }
@@ -192,15 +195,17 @@ function renderAllianceDuelContent() {
   if (!entry) {
     contentContainer.innerHTML = `
       <p class="panel-eyebrow">
-        Fehler
+        ${currentLanguage === "en" ? "Error" : "Fehler"}
       </p>
 
       <h3>
-        Keine Daten gefunden
+        ${currentLanguage === "en" ? "No data found" : "Keine Daten gefunden"}
       </h3>
 
       <p class="panel-subtitle">
-        Für diesen Tag wurde kein Eintrag gefunden.
+        ${currentLanguage === "en"
+          ? "No entry was found for this day."
+          : "Für diesen Tag wurde kein Eintrag gefunden."}
       </p>
     `;
 

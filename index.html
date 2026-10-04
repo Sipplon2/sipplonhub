@@ -24,12 +24,12 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="#top" class="brand" aria-label="Zur Startseite">
+      <a href="#top" class="brand" aria-label="Zur Startseite" data-i18n-aria="brandLabel">
         <img src="assets/logo/logo.png" alt="" class="brand-logo">
         <span class="brand-name">ISS <i>//</i> Last Z Hub</span>
       </a>
 
-      <nav class="topnav" aria-label="Bereiche">
+      <nav class="topnav" aria-label="Bereiche" data-i18n-aria="navLabel">
         <a href="#today" id="nav-today" data-tab-link="today" data-icon="🏠">Heute</a>
         <a href="#events" id="nav-events" data-tab-link="events" data-icon="📆">Events</a>
         <a href="#saison" id="nav-saison" data-tab-link="saison" data-icon="🌙">Saison</a>
@@ -40,7 +40,7 @@
       <div class="topbar-tools">
         <span id="time-clock" class="time-clock" aria-live="off"></span>
 
-        <div class="time-switch" role="group" aria-label="Zeitanzeige">
+        <div class="time-switch" role="group" aria-label="Zeitanzeige" data-i18n-aria="timeLabel">
           <button type="button" class="time-button active" data-time-mode="local" id="time-local">Lokal</button>
           <button type="button" class="time-button" data-time-mode="apo" id="time-apo">Apo</button>
         </div>
@@ -79,7 +79,7 @@
 
   <main id="top" class="page">
     <div class="tab-panel" data-tab-panel="today">
-    <section class="intro" aria-label="Heute">
+    <section class="intro" aria-label="Heute" data-i18n-aria="navToday">
       <div id="next-event" class="next-event">
         <p class="events-loading">Nächstes Event wird geladen …</p>
       </div>
@@ -102,10 +102,11 @@
         class="day-tabs"
         role="group"
         aria-label="Allianz-Duell nach Wochentag"
+        data-i18n-aria="allianceTabsLabel"
       ></div>
 
       <div id="alliance-content" class="section-body">
-        <p class="events-loading">Wird geladen …</p>
+        <p class="events-loading" data-i18n="loading">Wird geladen …</p>
       </div>
     </section>
 
@@ -191,8 +192,8 @@
   </main>
 
   <footer class="site-footer">
-    <p>Erstellt von <strong>Sipplon</strong></p>
-    <p>Inoffizieller Community-Hub für Last Z.</p>
+    <p><span data-i18n="footerBy">Erstellt von</span> <strong>Sipplon</strong></p>
+    <p data-i18n="footerNote">Inoffizieller Community-Hub für Last Z.</p>
   </footer>
 
   <script src="js/timeMode.js"></script>

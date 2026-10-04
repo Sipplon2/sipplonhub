@@ -47,11 +47,14 @@ async function initEvents() {
     nextEventContainer.innerHTML = `
       <article class="events-error">
         <strong>
-          Events konnten nicht geladen werden
+          ${currentLanguage === "en"
+            ? "Events could not be loaded"
+            : "Events konnten nicht geladen werden"}
         </strong>
 
         <p>
-          Prüfe data/de/events.json.
+          ${currentLanguage === "en" ? "Check" : "Prüfe"}
+          data/${currentLanguage}/events.json.
         </p>
       </article>
     `;
@@ -476,15 +479,17 @@ function getEventStatus(entry) {
 }
 
 function getEventStatusText(status) {
+  const isEnglish = currentLanguage === "en";
+
   switch (status) {
     case "running":
-      return "Läuft";
+      return isEnglish ? "Live" : "Läuft";
 
     case "upcoming":
-      return "Bevorstehend";
+      return isEnglish ? "Upcoming" : "Bevorstehend";
 
     default:
-      return "Beendet";
+      return isEnglish ? "Ended" : "Beendet";
   }
 }
 
@@ -587,11 +592,13 @@ function createNoUpcomingEvents() {
 
       <div>
         <h3>
-          Keine kommenden Events
+          ${currentLanguage === "en" ? "No upcoming events" : "Keine kommenden Events"}
         </h3>
 
         <p>
-          Momentan sind keine Termine eingetragen.
+          ${currentLanguage === "en"
+            ? "No dates are scheduled right now."
+            : "Momentan sind keine Termine eingetragen."}
         </p>
       </div>
     </article>

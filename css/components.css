@@ -1902,3 +1902,8 @@
   height: auto;
   aspect-ratio: 1 / 1;
 }
+
+/* Etikett am heutigen Tag in der jeweiligen Sprache */
+html[lang="en"] .day-tab.today::after {
+  content: "TODAY";
+}
