@@ -7,7 +7,10 @@
  * Stand angezeigt – gibt es keinen, bleibt der Bereich einfach versteckt.
  */
 const CODES_SOURCE_URL = "https://lastzguides.com/codes.html";
-const CODES_GIFT_CENTER_URL = "https://last-z.com/giftCenter/#/login";
+/* Einlöse-Seite im Spiel-Portal, je nach Sprache */
+function getRedeemUrl() {
+  return `https://last-z.com/#/${currentLanguage === "en" ? "en" : "de"}/order`;
+}
 const CODES_CACHE_KEY = "lastz-codes-cache";
 
 const codesTexts = {
@@ -17,7 +20,8 @@ const codesTexts = {
     fresh: "Neu",
     copy: "Kopieren",
     copied: "Kopiert",
-    note: "Codes werden nicht im Spiel, sondern im offiziellen Gift Center eingelöst.",
+    redeemTitle: "Code einlösen",
+    note: "Codes werden nicht im Spiel eingelöst, sondern im offiziellen Gift Center.",
     giftCenter: "Zum Gift Center",
     source: "Quelle: lastzguides.com – wird automatisch aktualisiert.",
   },
@@ -27,6 +31,7 @@ const codesTexts = {
     fresh: "New",
     copy: "Copy",
     copied: "Copied",
+    redeemTitle: "Redeem a code",
     note: "Codes are not redeemed in the game, but in the official Gift Center.",
     giftCenter: "Open Gift Center",
     source: "Source: lastzguides.com – updated automatically.",
@@ -209,10 +214,29 @@ function renderCodes() {
         .join("")}
     </div>
 
-    <p class="codes-note">
-      ${escape(texts.note)}
-      <a href="${CODES_GIFT_CENTER_URL}" target="_blank" rel="noopener noreferrer">${escape(texts.giftCenter)}</a>
-    </p>
+    <div class="codes-redeem">
+      <span class="codes-redeem-icon" aria-hidden="true">🎁</span>
+
+      <div class="codes-redeem-text">
+        <strong>${escape(texts.redeemTitle)}</strong>
+        <p>${escape(texts.note)}</p>
+      </div>
+
+      <a
+        class="codes-redeem-button"
+        href="${escape(getRedeemUrl())}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ${escape(texts.giftCenter)}
+        <span class="codes-redeem-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7"/>
+            <path d="M8 7h9v9"/>
+          </svg>
+        </span>
+      </a>
+    </div>
 
     <p class="codes-note">${escape(texts.source)}</p>
   `;

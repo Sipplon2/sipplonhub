@@ -1923,3 +1923,96 @@ html[lang="en"] .day-tab.today::after {
   background: #5be37a;
   border-radius: 999px;
 }
+
+/* Weiterleitung zum Gift Center */
+.codes-redeem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+
+  background:
+    linear-gradient(90deg, rgba(184, 242, 60, 0.14), transparent 70%),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 242, 60, 0.4);
+  border-radius: var(--radius-m);
+}
+
+.codes-redeem-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  font-size: 1.8rem;
+
+  background: var(--accent-soft);
+  border-radius: 14px;
+}
+
+.codes-redeem-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.codes-redeem-text strong {
+  display: block;
+
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.codes-redeem-text p {
+  margin: 2px 0 0;
+  color: #c3ccd2;
+  font-size: 0.9rem;
+}
+
+.codes-redeem-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 24px;
+
+  color: var(--accent-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px -6px rgba(184, 242, 60, 0.55);
+  transition: box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.codes-redeem-button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 30px -4px rgba(184, 242, 60, 0.75);
+}
+
+/* Pfeil in einem dunklen Kreis, der beim Darüberfahren nach oben rechts rückt */
+.codes-redeem-button {
+  padding-right: 10px;
+}
+
+.codes-redeem-arrow {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--accent);
+  background: var(--accent-ink);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.codes-redeem-button:hover .codes-redeem-arrow {
+  transform: translate(2px, -2px) rotate(8deg);
+}

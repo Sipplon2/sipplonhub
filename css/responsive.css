@@ -280,3 +280,20 @@
     content: "";
   }
 }
+
+@media (max-width: 700px) {
+  .codes-redeem {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .codes-redeem-text {
+    flex-basis: calc(100% - 74px);
+  }
+
+  .codes-redeem-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
