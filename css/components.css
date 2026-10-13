@@ -1907,3 +1907,19 @@
 html[lang="en"] .day-tab.today::after {
   content: "TODAY";
 }
+
+.code-new {
+  margin-left: 6px;
+  padding: 1px 7px;
+
+  color: #0a2412;
+  font-family: var(--font);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+
+  background: #5be37a;
+  border-radius: 999px;
+}

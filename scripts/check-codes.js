@@ -51,7 +51,7 @@ async function main() {
   const codes = [];
 
   for (const card of cards) {
-    if (!/status-pill--active/.test(card)) {
+    if (!/status-pill--(active|fresh)/.test(card)) {
       continue;
     }
 
@@ -60,6 +60,14 @@ async function main() {
     if (code && /^[A-Za-z0-9]{4,40}$/.test(code)) {
       codes.push(code);
     }
+  }
+
+  const claimed = Number(html.match(/(\d+)\s+active codes?/i)?.[1]);
+
+  if (Number.isFinite(claimed) && codes.length < claimed) {
+    fail(
+      `Die Quelle nennt ${claimed} aktive Codes, erkannt wurden nur ${codes.length}. Vermutlich gibt es einen neuen Status für Codes (js/codes.js und scripts/check-codes.js anpassen).`
+    );
   }
 
   if (codes.length === 0) {

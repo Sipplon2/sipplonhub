@@ -14,6 +14,7 @@ const codesTexts = {
   de: {
     title: "Geschenkcodes",
     subtitle: "Aktive Codes für kostenlose Belohnungen.",
+    fresh: "Neu",
     copy: "Kopieren",
     copied: "Kopiert",
     note: "Codes werden nicht im Spiel, sondern im offiziellen Gift Center eingelöst.",
@@ -23,6 +24,7 @@ const codesTexts = {
   en: {
     title: "Gift codes",
     subtitle: "Active codes for free rewards.",
+    fresh: "New",
     copy: "Copy",
     copied: "Copied",
     note: "Codes are not redeemed in the game, but in the official Gift Center.",
@@ -52,7 +54,11 @@ async function fetchActiveCodes() {
   const codes = [];
 
   for (const card of cards) {
-    if (!card.querySelector(".status-pill--active")) {
+    const pill = card.querySelector(".status-pill");
+    const isFresh = Boolean(pill?.classList.contains("status-pill--fresh"));
+    const isActive = Boolean(pill?.classList.contains("status-pill--active"));
+
+    if (!isFresh && !isActive) {
       continue;
     }
 
@@ -68,6 +74,7 @@ async function fetchActiveCodes() {
 
     codes.push({
       code,
+      fresh: isFresh,
       meta:
         card.querySelector(".code-card__meta")?.textContent.trim() ?? "",
     });
@@ -84,7 +91,13 @@ function loadCachedCodes() {
   try {
     const cached = JSON.parse(localStorage.getItem(CODES_CACHE_KEY));
 
-    return Array.isArray(cached?.codes) ? cached.codes : [];
+    const maxAge = 3 * 24 * 60 * 60 * 1000;
+
+    if (!Array.isArray(cached?.codes) || Date.now() - cached.time > maxAge) {
+      return [];
+    }
+
+    return cached.codes;
   } catch {
     return [];
   }
@@ -135,6 +148,24 @@ async function copyCodeToClipboard(code) {
   }
 }
 
+/* Zusatzzeile der Quelle (Englisch) für die deutsche Seite übersetzen */
+function translateCodeMeta(meta) {
+  if (currentLanguage === "en") {
+    return meta;
+  }
+
+  return meta
+    .replace(/Official/g, "Offiziell")
+    .replace(/First seen ([A-Za-z]+ \d{1,2}, \d{4})/g, (match, date) => {
+      const parsed = new Date(date + " 12:00 UTC");
+
+      return Number.isNaN(parsed.getTime())
+        ? match
+        : "Zuerst gesehen am " +
+            new Intl.DateTimeFormat("de-DE", { dateStyle: "medium", timeZone: "UTC" }).format(parsed);
+    });
+}
+
 function renderCodes() {
   const section = document.querySelector("#codes");
 
@@ -161,8 +192,8 @@ function renderCodes() {
           (item) => `
             <div class="code-card">
               <div>
-                <code>${escape(item.code)}</code>
-                ${item.meta ? `<small>${escape(item.meta)}</small>` : ""}
+                <code>${escape(item.code)}${item.fresh ? ` <span class="code-new">${escape(texts.fresh)}</span>` : ""}</code>
+                ${item.meta ? `<small>${escape(translateCodeMeta(item.meta))}</small>` : ""}
               </div>
 
               <button
